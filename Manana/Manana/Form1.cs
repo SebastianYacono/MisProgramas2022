@@ -189,7 +189,7 @@ namespace Manana
             else if (mesMas == 12) { mesText = "diciembre"; }
             
             //ESCRIBIR RESULTADO
-            lbl_resultado.Text = "El día siguiente es " + Convert.ToString(diaMas) + " de " + "AQUI VA EL MES"  + " de " + Convert.ToString(anioMas);
+            lbl_resultado.Text = "El día siguiente es: " + "\r\n" + "\r\n" + Convert.ToString(diaMas) + " de " + "MES"  + " de " + Convert.ToString(anioMas);
             Bt_fecha.Enabled = false;
         }
 
