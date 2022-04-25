@@ -116,7 +116,7 @@ namespace Manana
                     }
                     else
                     {
-                        MessageBox.Show("Este mes es bisiesto y tiene entre 1 y 29 días.", "ERROR");
+                        MessageBox.Show("Este año es bisiesto y tiene entre 1 y 29 días.", "ERROR");
                         TB_dia.Focus();
                     }
                 }
@@ -133,7 +133,7 @@ namespace Manana
                     }
                     else
                     {
-                        MessageBox.Show("Este mes no es bisiesto y tiene entre 1 y 28 días.", "ERROR");
+                        MessageBox.Show("Este año no es bisiesto y tiene entre 1 y 28 días.", "ERROR");
                         TB_dia.Focus();
                     }
                 }
@@ -149,7 +149,7 @@ namespace Manana
             int diaMas;
             int mesMas;
             int anioMas;
-            string mesText;
+            string mesText = System.Convert.ToString(mes);
 
             //INSTRUCCIONES PARA COMBINACION DIA-MES
             if (((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia == 30) || dia == 31 || (mes == 2 && (dia == 29 || dia == 28 && (anio % 4 != 0 || anio % 100 == 0 || anio % 100 == 0))))
@@ -189,7 +189,7 @@ namespace Manana
             else if (mesMas == 12) { mesText = "diciembre"; }
             
             //ESCRIBIR RESULTADO
-            lbl_resultado.Text = "El día siguiente es: " + "\r\n" + "\r\n" + Convert.ToString(diaMas) + " de " + "MES"  + " de " + Convert.ToString(anioMas);
+            lbl_resultado.Text = "El día siguiente es: " + "\r\n" + "\r\n" + Convert.ToString(diaMas) + " de " + mesText  + " de " + Convert.ToString(anioMas);
             Bt_fecha.Enabled = false;
         }
 
@@ -206,6 +206,7 @@ namespace Manana
             BT_cargarMes.Enabled = false;
             BT_cargarDia.Enabled = false;
             Bt_fecha.Enabled = false;
+            TB_anio.Focus();
         }
     }
 }
