@@ -1,34 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Manana
 {
     public partial class Form1 : Form
     {
-        
+
 
         public Form1()
         {
             InitializeComponent();
             TB_anio.Focus();
         }
-        
 
-        
+
+
 
         public void BT_cargarAnio_Click(object sender, EventArgs e)
         {
             int anio = System.Convert.ToInt32(TB_anio.Text);
 
             //FILTRO PARA AÑO
-            if (anio >0)
+            if (anio > 0)
             {
                 TB_mes.Enabled = true;
                 BT_cargarMes.Enabled = true;
@@ -187,9 +180,9 @@ namespace Manana
             else if (mesMas == 10) { mesText = "octubre"; }
             else if (mesMas == 11) { mesText = "noviembre"; }
             else if (mesMas == 12) { mesText = "diciembre"; }
-            
+
             //ESCRIBIR RESULTADO
-            lbl_resultado.Text = "El día siguiente es: " + "\r\n" + "\r\n" + Convert.ToString(diaMas) + " de " + mesText  + " de " + Convert.ToString(anioMas);
+            lbl_resultado.Text = "El día siguiente es: " + "\r\n" + "\r\n" + Convert.ToString(diaMas) + " de " + mesText + " de " + Convert.ToString(anioMas);
             Bt_fecha.Enabled = false;
         }
 
@@ -208,5 +201,7 @@ namespace Manana
             Bt_fecha.Enabled = false;
             TB_anio.Focus();
         }
+
+
     }
 }
