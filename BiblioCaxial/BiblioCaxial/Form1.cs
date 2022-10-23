@@ -14,15 +14,15 @@ namespace BiblioCaxial
 {
     public partial class Inicio : Form
     {
-        DatosConexion conexionDB = new DatosConexion();
+        readonly DatosConexion conexionDB = new DatosConexion();
         public Inicio()
         {
             InitializeComponent();
         }
 
-        private void lnkL_DBCons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LnkL_DBCons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            conexionDB.probarConexion();
+            conexionDB.ProbarConexion();
         }
 
         private void Btn_LogIn_Click(object sender, EventArgs e)

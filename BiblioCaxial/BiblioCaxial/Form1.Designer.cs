@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lnkL_DBCons = new System.Windows.Forms.LinkLabel();
+            this.LnkL_DBCons = new System.Windows.Forms.LinkLabel();
             this.Btn_LogIn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lnkL_DBCons);
+            this.groupBox1.Controls.Add(this.LnkL_DBCons);
             this.groupBox1.Controls.Add(this.Btn_LogIn);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -68,16 +68,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // lnkL_DBCons
+            // LnkL_DBCons
             // 
-            this.lnkL_DBCons.AutoSize = true;
-            this.lnkL_DBCons.Location = new System.Drawing.Point(44, 182);
-            this.lnkL_DBCons.Name = "lnkL_DBCons";
-            this.lnkL_DBCons.Size = new System.Drawing.Size(156, 13);
-            this.lnkL_DBCons.TabIndex = 6;
-            this.lnkL_DBCons.TabStop = true;
-            this.lnkL_DBCons.Text = "¿La base de datos está activa?";
-            this.lnkL_DBCons.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkL_DBCons_LinkClicked);
+            this.LnkL_DBCons.AutoSize = true;
+            this.LnkL_DBCons.Location = new System.Drawing.Point(44, 182);
+            this.LnkL_DBCons.Name = "LnkL_DBCons";
+            this.LnkL_DBCons.Size = new System.Drawing.Size(156, 13);
+            this.LnkL_DBCons.TabIndex = 6;
+            this.LnkL_DBCons.TabStop = true;
+            this.LnkL_DBCons.Text = "¿La base de datos está activa?";
+            this.LnkL_DBCons.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkL_DBCons_LinkClicked);
             // 
             // Btn_LogIn
             // 
@@ -174,7 +174,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TB_Pass;
         private System.Windows.Forms.TextBox TB_User;
-        private System.Windows.Forms.LinkLabel lnkL_DBCons;
+        private System.Windows.Forms.LinkLabel LnkL_DBCons;
         private System.Windows.Forms.Button Btn_LogIn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

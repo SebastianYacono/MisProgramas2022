@@ -12,12 +12,98 @@ namespace BiblioCaxial
     internal class DatosConexion
     {
         protected OleDbConnection conexion;
-        protected string cadenaCon = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Estudio\Desarrollo de Software\SEGUNDO AÑO\Programación II\Mis programas 2022\BiblioCaxial\BiblioCaxial\bd\BCaixal.mdb";
+        public OleDbDataReader reader;
+        protected string cadenaCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BCaixal.mdb";
 
         public DatosConexion()
         {
             conexion = new OleDbConnection(cadenaCon);
         }
+
+        public void Select(string sql)
+        {
+            AbrirConexion();
+            OleDbCommand comando = new OleDbCommand(sql, conexion);
+
+
+            comando.CommandType = CommandType.Text;
+
+            try
+            {
+                reader = comando.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error\n\n" + e.Message);
+            }
+        }
+
+        public void Delete (string sql)
+        {
+            AbrirConexion();
+            OleDbCommand comando = new OleDbCommand(sql, conexion);
+
+
+            comando.CommandText = sql;
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error\n\n" + e.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        public void Insert (string sql)
+        { 
+            AbrirConexion();
+            OleDbCommand comando = new OleDbCommand(sql, conexion);
+
+
+            comando.CommandText = sql;
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error\n\n" + e.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        public void Update(string sql)
+        {
+            AbrirConexion();
+            OleDbCommand comando = new OleDbCommand(sql, conexion);
+
+
+            comando.CommandText = sql;
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error\n\n" + e.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
 
         public void AbrirConexion()
         {
@@ -30,8 +116,7 @@ namespace BiblioCaxial
             }
             catch (Exception e)
             {
-
-                throw new Exception("No se puede abrir la conexión a la base de datos", e);
+                MessageBox.Show("No se puede abrir la conexión a la base de datos.\n\n" + e);
             }
         }
 
@@ -46,11 +131,11 @@ namespace BiblioCaxial
             }
             catch (Exception e)
             {
-                throw new Exception("No se puede cerrar la conexión a la base de datos", e);
+                MessageBox.Show("No se puede cerrar la conexión a la base de datos.\n\n" + e);
             }
         }
 
-        public void probarConexion()
+        public void ProbarConexion()
         {
             try
             {
@@ -63,7 +148,7 @@ namespace BiblioCaxial
             catch (Exception e)
             {
 
-                MessageBox.Show(e + "\n\nNo hay conexión a la Base de Datos.");
+                MessageBox.Show("No hay conexión a la Base de Datos.\n\n" + e);
             }
             CerrarConexion();
         }
