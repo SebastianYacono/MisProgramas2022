@@ -47,7 +47,7 @@ namespace BiblioCaxial
             datosConexion.Insert("INSERT INTO PROVEEDOR(Nombre,Telefono,Email) VALUES('" + nombre + "','" + telefono + "','" + email + "')");
 
 
-            MessageBox.Show("El proveedor ha sido agregado exitosamente", "Añadir proveedor");
+            MessageBox.Show("El proveedor ha sido agregado exitosamente", "Añadir proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             Agregar();

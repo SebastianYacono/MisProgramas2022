@@ -36,7 +36,7 @@ namespace BiblioCaxial
             {
                 Console.WriteLine("Error\n\n" + e.Message);
             }
-        }
+        }//Crea copia de DB a través de SELECT.
 
         public void Delete (string sql)
         {
@@ -58,7 +58,7 @@ namespace BiblioCaxial
             {
                 CerrarConexion();
             }
-        }
+        }//Elimina fila en DB a través de DELETE.
 
         public void Insert (string sql)
         { 
@@ -80,7 +80,7 @@ namespace BiblioCaxial
             {
                 CerrarConexion();
             }
-        }
+        }//Crea nuevas filas en DB a través de INSERT.
 
         public void Update(string sql)
         {
@@ -102,7 +102,7 @@ namespace BiblioCaxial
             {
                 CerrarConexion();
             }
-        }
+        }//Modifica filas en DB a través de UPDATE.
 
 
         public void AbrirConexion()
@@ -118,7 +118,7 @@ namespace BiblioCaxial
             {
                 MessageBox.Show("No se puede abrir la conexión a la base de datos.\n\n" + e);
             }
-        }
+        }//Abre conexión.
 
         public void CerrarConexion()
         {
@@ -133,7 +133,7 @@ namespace BiblioCaxial
             {
                 MessageBox.Show("No se puede cerrar la conexión a la base de datos.\n\n" + e);
             }
-        }
+        }//Cierra conexión.
 
         public void ProbarConexion()
         {

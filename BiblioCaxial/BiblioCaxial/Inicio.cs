@@ -20,12 +20,12 @@ namespace BiblioCaxial
             InitializeComponent();
         }
 
-        private void LnkL_DBCons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LnkL_DBCons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) //Test DB
         {
             conexionDB.ProbarConexion();
         }
 
-        private void Btn_LogIn_Click(object sender, EventArgs e)
+        private void Btn_LogIn_Click(object sender, EventArgs e) //Cambia a form Principal. Futuro login.
         {
             Principal principal = new Principal();
             principal.Show();

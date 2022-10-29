@@ -50,7 +50,7 @@ namespace BiblioCaxial
             Thread.Sleep(1000);
             Agregar();
 
-            MessageBox.Show("El proveedor ha sido cambiado exitosamente", "Editar proveedor");
+            MessageBox.Show("El proveedor ha sido cambiado exitosamente", "Editar proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -59,6 +59,6 @@ namespace BiblioCaxial
             this.Close();
         }
 
-       
+
     }
 }

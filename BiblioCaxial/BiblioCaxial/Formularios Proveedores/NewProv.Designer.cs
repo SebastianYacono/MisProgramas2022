@@ -32,12 +32,12 @@
             this.Btn_CloseProv = new System.Windows.Forms.Button();
             this.Btn_CleanProv = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_emailProv = new System.Windows.Forms.TextBox();
-            this.tb_telProv = new System.Windows.Forms.TextBox();
-            this.tb_nombProv = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_nombProv = new System.Windows.Forms.TextBox();
+            this.tb_telProv = new System.Windows.Forms.TextBox();
+            this.tb_emailProv = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,35 +89,14 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // tb_emailProv
+            // label3
             // 
-            this.tb_emailProv.Location = new System.Drawing.Point(19, 158);
-            this.tb_emailProv.Name = "tb_emailProv";
-            this.tb_emailProv.Size = new System.Drawing.Size(236, 20);
-            this.tb_emailProv.TabIndex = 2;
-            // 
-            // tb_telProv
-            // 
-            this.tb_telProv.Location = new System.Drawing.Point(19, 101);
-            this.tb_telProv.Name = "tb_telProv";
-            this.tb_telProv.Size = new System.Drawing.Size(236, 20);
-            this.tb_telProv.TabIndex = 1;
-            // 
-            // tb_nombProv
-            // 
-            this.tb_nombProv.Location = new System.Drawing.Point(19, 41);
-            this.tb_nombProv.Name = "tb_nombProv";
-            this.tb_nombProv.Size = new System.Drawing.Size(236, 20);
-            this.tb_nombProv.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Nombre del proveedor:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Correo electrónico:";
             // 
             // label2
             // 
@@ -128,14 +107,35 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Número de teléfono:";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Correo electrónico:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Nombre del proveedor:";
+            // 
+            // tb_nombProv
+            // 
+            this.tb_nombProv.Location = new System.Drawing.Point(19, 41);
+            this.tb_nombProv.Name = "tb_nombProv";
+            this.tb_nombProv.Size = new System.Drawing.Size(236, 20);
+            this.tb_nombProv.TabIndex = 0;
+            // 
+            // tb_telProv
+            // 
+            this.tb_telProv.Location = new System.Drawing.Point(19, 101);
+            this.tb_telProv.Name = "tb_telProv";
+            this.tb_telProv.Size = new System.Drawing.Size(236, 20);
+            this.tb_telProv.TabIndex = 1;
+            // 
+            // tb_emailProv
+            // 
+            this.tb_emailProv.Location = new System.Drawing.Point(19, 158);
+            this.tb_emailProv.Name = "tb_emailProv";
+            this.tb_emailProv.Size = new System.Drawing.Size(236, 20);
+            this.tb_emailProv.TabIndex = 2;
             // 
             // label5
             // 
@@ -155,6 +155,7 @@
             this.ClientSize = new System.Drawing.Size(300, 322);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewProv";

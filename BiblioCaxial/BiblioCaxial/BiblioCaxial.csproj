@@ -47,17 +47,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatosConexion.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewProv.cs">
+    <Compile Include="Formularios Proveedores\NewProv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewProv.Designer.cs">
+    <Compile Include="Formularios Proveedores\NewProv.Designer.cs">
       <DependentUpon>NewProv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios Autor\NewAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Autor\NewAutor.Designer.cs">
+      <DependentUpon>NewAutor.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -67,16 +73,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateProv.cs">
+    <Compile Include="Formularios Proveedores\UpdateProv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateProv.Designer.cs">
+    <Compile Include="Formularios Proveedores\UpdateProv.Designer.cs">
       <DependentUpon>UpdateProv.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios Autor\UpdateAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Autor\UpdateAutor.Designer.cs">
+      <DependentUpon>UpdateAutor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios Autor\NewAutor.resx">
+      <DependentUpon>NewAutor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewProv.resx">
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Proveedores\NewProv.resx">
       <DependentUpon>NewProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
@@ -91,8 +106,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UpdateProv.resx">
+    <EmbeddedResource Include="Formularios Proveedores\UpdateProv.resx">
       <DependentUpon>UpdateProv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Autor\UpdateAutor.resx">
+      <DependentUpon>UpdateAutor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,5 +128,6 @@
   <ItemGroup>
     <Content Include="BCaixal.mdb" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
