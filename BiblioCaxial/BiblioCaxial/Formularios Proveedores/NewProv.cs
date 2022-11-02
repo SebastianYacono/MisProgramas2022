@@ -20,22 +20,7 @@ namespace BiblioCaxial
             principal = proveedores;
         }
 
-        protected void Agregar()
-        {
-            principal.LlenarDgvProv();
-        }
-
-        private void Btn_CloseProv_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Btn_CleanProv_Click(object sender, EventArgs e)
-        {
-            limpiarForm();
-        }
-
-        //ALTA DE UN NUEVO PROVEEDOR
+        #region Métodos de los botones
         private void Btn_AddProv_Click(object sender, EventArgs e)
         {
             string nombre = tb_nombProv.Text;
@@ -54,13 +39,27 @@ namespace BiblioCaxial
 
             limpiarForm();
         }
+        private void Btn_CloseProv_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void Btn_CleanProv_Click(object sender, EventArgs e)
+        {
+            limpiarForm();
+        }
+        #endregion
 
-        //private bool valTel 
+        #region Métodos fuera de los botones
         private void limpiarForm()
         {
             tb_nombProv.Clear();
             tb_telProv.Clear();
             tb_emailProv.Clear();
         }
+        protected void Agregar()
+        {
+            principal.LlenarDgvProv();
+        }
+        #endregion
     }
 }

@@ -18,19 +18,191 @@ namespace BiblioCaxial
             InitializeComponent();
             LlenarDgvProv();
             LlenarDgvAutor();
-            //LlenarDgvLibro();
-            //LlenarDgvCliente();
+            LlenarDgvLibro();
+            LlenarDgvCliente();
         }
 
-        #region Tab Autor
+        #region Tab Clientes
+        public void LlenarDgvCliente()//Rellena el dgv de cliente
+        {
+            dgv_Client.Rows.Clear();
 
-        public void LlenarDgvAutor() //Rellena el dgv de autor
+            DatosConexion datosConexion = new DatosConexion();
+
+            datosConexion.Select("SELECT CLIENTE.idCliente, CLIENTE.Apellido, CLIENTE.Nombre, CLIENTE.Direccion, BARRIO.Barrio, CLIENTE.Telefono, CLIENTE.Email FROM BARRIO INNER JOIN CLIENTE ON BARRIO.idBarrio = CLIENTE.idBarrio;");
+            while (datosConexion.reader.Read())
+            {
+                List<object> CamposClient = new List<object>();
+                if (!datosConexion.reader.IsDBNull(0))
+                {
+                    CamposClient.Add(datosConexion.reader.GetInt32(0));
+                }
+                if (!datosConexion.reader.IsDBNull(1))
+                {
+                    CamposClient.Add(datosConexion.reader.GetString(1));
+                }
+                if (!datosConexion.reader.IsDBNull(2))
+                {
+                    CamposClient.Add(datosConexion.reader.GetString(2));
+                }
+                if (!datosConexion.reader.IsDBNull(3))
+                {
+                    CamposClient.Add(datosConexion.reader.GetString(3));
+                }
+                if (!datosConexion.reader.IsDBNull(4))
+                {
+                    CamposClient.Add(datosConexion.reader.GetString(4));
+                }
+                if (!datosConexion.reader.IsDBNull(5))
+                {
+                    CamposClient.Add(datosConexion.reader.GetDecimal(5));
+                }
+                if (!datosConexion.reader.IsDBNull(6))
+                {
+                    CamposClient.Add(datosConexion.reader.GetString(6));
+                }
+                
+                dgv_Client.Rows.Add(CamposClient.ToArray());
+
+            }
+
+            datosConexion.CerrarConexion();
+        }
+        private void Btn_newClient_Click(object sender, EventArgs e)//Comando para crear el cliente.
+        {
+            NewClient newClient = new NewClient(this);
+            newClient.ShowDialog();
+        }
+        private void Btn_deleteClient_Click(object sender, EventArgs e)//Comando para eliminar cliente
+        {
+            string valor;
+            valor = dgv_Client.Rows[dgv_Client.CurrentRow.Index].Cells[0].Value.ToString();
+
+            DialogResult r = MessageBox.Show("¿Quieres eliminar este elemento?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (r == DialogResult.Yes)
+            {
+                DatosConexion datosConexion = new DatosConexion();
+                datosConexion.Delete("DELETE FROM CLIENTE WHERE(idCliente = " + valor + ")");
+
+                LlenarDgvCliente();
+
+                MessageBox.Show("El cliente ha sido eliminado exitosamente", "Eliminar cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Btn_editClient_Click(object sender, EventArgs e)//Comando para editar el cliente.
+        {
+            var fila = dgv_Client.CurrentRow;
+            int id = 0;
+            string apellido = "";
+            string nombre = "";
+            string direccion = "";
+            string barrio = "";
+            decimal telefono = 0;
+            string mail = "";
+
+            if (fila != null)
+            {
+                if (fila.Cells[0].Value != null)
+                    id = Convert.ToInt32(fila.Cells[0].Value);
+                if (fila.Cells[1].Value != null)
+                    apellido = fila.Cells[1].Value.ToString();
+                if (fila.Cells[2].Value != null)
+                    nombre = fila.Cells[2].Value.ToString();
+                if (fila.Cells[3].Value != null)
+                    direccion = fila.Cells[3].Value.ToString();
+                if (fila.Cells[4].Value != null)
+                    barrio = fila.Cells[4].Value.ToString();
+                if (fila.Cells[5].Value != null)
+                    telefono = Convert.ToDecimal(fila.Cells[5].Value);
+                if (fila.Cells[6].Value != null)
+                    mail = fila.Cells[6].Value.ToString();
+            }
+            //Lleva al form UpdateAut
+            UpdateClient updateClient = new UpdateClient(this, id, apellido, nombre, direccion,barrio,telefono, mail);
+            updateClient.ShowDialog();
+        }
+        #endregion
+
+
+        #region Tab Libros
+        public void LlenarDgvLibro()//Rellena el dgv de libro
+        {
+            dgv_Libros.Rows.Clear();
+
+            DatosConexion datosConexion = new DatosConexion();
+
+            datosConexion.Select("SELECT LIBROS.IdLibro, LIBROS.Titulo, AUTOR.Alias, GENERO.Genero, LIBROS.Descripcion, IDIOMA.Idioma, PROVEEDOR.Nombre, LIBROS.FechaIng, LIBROS.Disponible, LIBROS.Ubicacion, ESTADO.Estado FROM PROVEEDOR INNER JOIN (IDIOMA INNER JOIN (ESTADO INNER JOIN ((AUTOR INNER JOIN GENERO ON AUTOR.idGenero = GENERO.idGenero) INNER JOIN LIBROS ON (GENERO.idGenero = LIBROS.idGenero) AND (AUTOR.idAutor = LIBROS.idAutor)) ON ESTADO.idEstado = LIBROS.idEstado) ON IDIOMA.idIdioma = LIBROS.idIdioma) ON PROVEEDOR.idProveedor = LIBROS.idProveedor;");
+            while (datosConexion.reader.Read())
+            {
+                List<object> CamposLibros = new List<object>();
+                if (!datosConexion.reader.IsDBNull(0))//id
+                {
+                    CamposLibros.Add(datosConexion.reader.GetInt32(0));
+                }
+                if (!datosConexion.reader.IsDBNull(1))//titulo
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(1));
+                }
+                if (!datosConexion.reader.IsDBNull(2))//autor
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(2));
+                }
+                if (!datosConexion.reader.IsDBNull(3))//genero
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(3));
+                }
+                if (!datosConexion.reader.IsDBNull(4))//descripcion
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(4));
+                }
+                if (!datosConexion.reader.IsDBNull(5))//idioma
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(5));
+                }
+                if (!datosConexion.reader.IsDBNull(6))//proveedor
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(6));
+                }
+                if (!datosConexion.reader.IsDBNull(7))//fechaIng
+                {
+                    CamposLibros.Add(datosConexion.reader.GetDateTime(7));
+                }
+                if (!datosConexion.reader.IsDBNull(8))//disp
+                {
+                    CamposLibros.Add(datosConexion.reader.GetBoolean(8));
+                }
+                if (!datosConexion.reader.IsDBNull(9))//ubicacion
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(9));
+                }
+                if (!datosConexion.reader.IsDBNull(10))//estado
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(10));
+                }
+
+                dgv_Libros.Rows.Add(CamposLibros.ToArray());
+
+            }
+
+            datosConexion.CerrarConexion();
+        }
+        private void Btn_newLibro_Click(object sender, EventArgs e)
+        {
+            NewLibro newLibro = new NewLibro(this);
+            newLibro.ShowDialog();
+        }
+        #endregion
+
+
+        #region Tab Autor
+        public void LlenarDgvAutor()//Rellena el dgv de autor.
         {
             dgv_Autor.Rows.Clear();
 
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT AUTOR.idAutor, AUTOR.Apellido, AUTOR.Nombre, PAIS.Pais FROM AUTOR INNER JOIN PAIS ON AUTOR.idPais = PAIS.idPais; ");
+            datosConexion.Select("SELECT AUTOR.idAutor, AUTOR.Apellido, AUTOR.Nombre, PAIS.Pais, GENERO.Genero, AUTOR.Alias FROM PAIS INNER JOIN (AUTOR INNER JOIN GENERO ON AUTOR.idGenero = GENERO.idGenero) ON PAIS.idPais = AUTOR.idPais;");
             while (datosConexion.reader.Read())
             {
                 List<object> CamposAut = new List<object>();
@@ -50,6 +222,14 @@ namespace BiblioCaxial
                 {
                     CamposAut.Add(datosConexion.reader.GetString(3));
                 }
+                if (!datosConexion.reader.IsDBNull(4))
+                {
+                    CamposAut.Add(datosConexion.reader.GetString(4));
+                }
+                if (!datosConexion.reader.IsDBNull(5))
+                {
+                    CamposAut.Add(datosConexion.reader.GetString(5));
+                }
 
                 dgv_Autor.Rows.Add(CamposAut.ToArray());
 
@@ -57,14 +237,12 @@ namespace BiblioCaxial
 
             datosConexion.CerrarConexion();
         }
-
-        private void Btn_NewAut_Click(object sender, EventArgs e)
+        private void Btn_NewAut_Click(object sender, EventArgs e)//Comando para crear el autor.
         {
             NewAutor newAutor = new NewAutor(this);
             newAutor.ShowDialog();
-        }//Comando para crear el autor.
-
-        private void Btn_deleteAut_Click(object sender, EventArgs e)//Comando para eliminar autor
+        }
+        private void Btn_deleteAut_Click(object sender, EventArgs e)//Comando para eliminar autor.
         {
             string valor;
             valor = dgv_Autor.Rows[dgv_Autor.CurrentRow.Index].Cells[0].Value.ToString();
@@ -81,14 +259,15 @@ namespace BiblioCaxial
                 MessageBox.Show("El autor ha sido eliminado exitosamente", "Eliminar autor", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void Btn_editAut_Click(object sender, EventArgs e)
+        private void Btn_editAut_Click(object sender, EventArgs e)//Comando para editar el autor.
         {
             var fila = dgv_Autor.CurrentRow;
             int id = 0;
             string apellido = "";
             string nombre = "";
             string pais = "";
+            string genero = "";
+            string alias = "";
 
             if (fila != null)
             {
@@ -100,18 +279,20 @@ namespace BiblioCaxial
                     nombre = fila.Cells[2].Value.ToString();
                 if (fila.Cells[3].Value != null)
                     pais = fila.Cells[3].Value.ToString();
+                if (fila.Cells[4].Value != null)
+                    genero = fila.Cells[4].Value.ToString();
+                if (fila.Cells[5].Value != null)
+                    alias = fila.Cells[5].Value.ToString();
             }
             //Lleva al form UpdateAut
-            UpdateAutor updateAutor = new UpdateAutor(this, id, apellido, nombre, pais);
+            UpdateAutor updateAutor = new UpdateAutor(this, id, apellido, nombre, pais, genero, alias);
             updateAutor.ShowDialog();
         }
-
         #endregion
 
 
         #region Tab Proveedores
-
-        public void LlenarDgvProv() //Rellena el dgv de proveedores
+        public void LlenarDgvProv() //Rellena el dgv de proveedores.
         {
             dgv_prov.Rows.Clear();
 
@@ -144,15 +325,13 @@ namespace BiblioCaxial
 
             datosConexion.CerrarConexion();
         }
-
         private void Btn_NewProv_Click(object sender, EventArgs e) //Comando para crear el proveedor.
         {
             //Lleva al form NvoProv
             NewProv NvoProv = new NewProv(this);
             NvoProv.ShowDialog();
         }
-
-        private void Btn_deleteProv_Click(object sender, EventArgs e) //Comando para eliminar el proveedor
+        private void Btn_deleteProv_Click(object sender, EventArgs e) //Comando para eliminar el proveedor.
         {
 
 
@@ -171,8 +350,7 @@ namespace BiblioCaxial
                 MessageBox.Show("El proveedor ha sido eliminado exitosamente", "Eliminar proveedor",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
         }
-
-        private void Btn_editProv_Click(object sender, EventArgs e) //Comando para editar el proveedor
+        private void Btn_editProv_Click(object sender, EventArgs e) //Comando para editar el proveedor.
         {
             //Realiza lectura del dgv y lo guarda para trasladar la info
             var fila = dgv_prov.CurrentRow;
@@ -196,30 +374,25 @@ namespace BiblioCaxial
             UpdateProv updateProv = new UpdateProv(this, id, nombre, telefono, email);
             updateProv.ShowDialog();
         }
-
         #endregion
 
 
         #region Funciones del formulario
-        private void SalirApp_Click(object sender, EventArgs e) //Boton Cerrar. Produce cierre completo del programa
+        private void SalirApp_Click(object sender, EventArgs e) //Boton Cerrar. Produce cierre completo del programa.
         {
             Application.Exit();
         }
-        
-        
-        private void timer1_Tick_1(object sender, EventArgs e) // Controla fecha y hora
+        private void timer1_Tick_1(object sender, EventArgs e) // Controla fecha y hora.
         {
             lbl_FecHor.Text = DateTime.Now.ToString("dd/MM/yyyy") + "  -  " + DateTime.Now.ToString("HH:mm");
         }
-
-        private void Principal_FormClosed(object sender, FormClosedEventArgs e) //Genera el cierre total del soft cuando se presiona la X
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e) //Genera el cierre total del soft cuando se presiona la X.
         {
             Application.Exit();
         }
 
-
         #endregion
 
-
+       
     }
 }

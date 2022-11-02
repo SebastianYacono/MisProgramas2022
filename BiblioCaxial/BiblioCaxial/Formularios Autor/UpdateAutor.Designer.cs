@@ -30,6 +30,8 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbx_genUAutor = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.cbx_paisUAut = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_idAu = new System.Windows.Forms.Label();
@@ -56,6 +58,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbx_genUAutor);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cbx_paisUAut);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lbl_idAu);
@@ -66,16 +70,33 @@
             this.groupBox1.Controls.Add(this.Btn_EditAut);
             this.groupBox1.Controls.Add(this.tb_apellUAut);
             this.groupBox1.Controls.Add(this.tb_nombUAut);
-            this.groupBox1.Location = new System.Drawing.Point(12, 62);
+            this.groupBox1.Location = new System.Drawing.Point(11, 62);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(276, 283);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
+            // cbx_genUAutor
+            // 
+            this.cbx_genUAutor.FormattingEnabled = true;
+            this.cbx_genUAutor.Location = new System.Drawing.Point(19, 216);
+            this.cbx_genUAutor.Name = "cbx_genUAutor";
+            this.cbx_genUAutor.Size = new System.Drawing.Size(236, 21);
+            this.cbx_genUAutor.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Género de preferencia:";
+            // 
             // cbx_paisUAut
             // 
             this.cbx_paisUAut.FormattingEnabled = true;
-            this.cbx_paisUAut.Location = new System.Drawing.Point(19, 201);
+            this.cbx_paisUAut.Location = new System.Drawing.Point(19, 171);
             this.cbx_paisUAut.Name = "cbx_paisUAut";
             this.cbx_paisUAut.Size = new System.Drawing.Size(236, 21);
             this.cbx_paisUAut.TabIndex = 9;
@@ -102,7 +123,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 185);
+            this.label3.Location = new System.Drawing.Point(16, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 6;
@@ -111,7 +132,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 128);
+            this.label2.Location = new System.Drawing.Point(16, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 5;
@@ -155,7 +176,7 @@
             // 
             // tb_nombUAut
             // 
-            this.tb_nombUAut.Location = new System.Drawing.Point(19, 144);
+            this.tb_nombUAut.Location = new System.Drawing.Point(19, 127);
             this.tb_nombUAut.Name = "tb_nombUAut";
             this.tb_nombUAut.Size = new System.Drawing.Size(236, 20);
             this.tb_nombUAut.TabIndex = 1;
@@ -173,7 +194,7 @@
             this.Name = "UpdateAutor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateAutor";
+            this.Text = "Editar autor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -195,5 +216,7 @@
         private System.Windows.Forms.TextBox tb_apellUAut;
         private System.Windows.Forms.TextBox tb_nombUAut;
         private System.Windows.Forms.ComboBox cbx_paisUAut;
+        private System.Windows.Forms.ComboBox cbx_genUAutor;
+        private System.Windows.Forms.Label label6;
     }
 }

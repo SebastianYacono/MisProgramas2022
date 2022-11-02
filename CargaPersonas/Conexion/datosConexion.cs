@@ -5,22 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
-using System.Windows.Forms;
 
-namespace BiblioCaxial
+namespace Conexion
 {
-    internal class DatosConexion
+    public class datosConexion
     {
         protected OleDbConnection conexion;
         public OleDbDataReader reader;
-        protected string cadenaCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BCaixal.mdb";
+        protected string cadenaCon = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\DataBases\PersFinal.mdb";
 
-        public DatosConexion()
+        public datosConexion()
         {
             conexion = new OleDbConnection(cadenaCon);
         }
 
-        public void Select(string sql)
+        #region Comandos SQL
+        /*
+        public void Select(string sql)//Crea copia de DB a través de SELECT.
         {
             AbrirConexion();
             OleDbCommand comando = new OleDbCommand(sql, conexion);
@@ -34,10 +35,10 @@ namespace BiblioCaxial
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error\n\n" + e.Message);
+                throw new Exception("Error\n\n", e);
             }
-        }//Crea copia de DB a través de SELECT.
-        public void Delete (string sql)
+        }
+        public void Delete(string sql)//Elimina fila en DB a través de DELETE.
         {
             AbrirConexion();
             OleDbCommand comando = new OleDbCommand(sql, conexion);
@@ -51,35 +52,14 @@ namespace BiblioCaxial
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error\n\n" + e.Message);
+                throw new Exception("Error\n\n", e);
             }
             finally
             {
                 CerrarConexion();
             }
-        }//Elimina fila en DB a través de DELETE.
-        public void Insert (string sql)
-        { 
-            AbrirConexion();
-            OleDbCommand comando = new OleDbCommand(sql, conexion);
-
-
-            comando.CommandText = sql;
-
-            try
-            {
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error\n\n" + e.Message);
-            }
-            finally
-            {
-                CerrarConexion();
-            }
-        }//Crea nuevas filas en DB a través de INSERT.
-        public void Update(string sql)
+        }
+        public void Insert(string sql)//Crea nuevas filas en DB a través de INSERT.
         {
             AbrirConexion();
             OleDbCommand comando = new OleDbCommand(sql, conexion);
@@ -93,16 +73,38 @@ namespace BiblioCaxial
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error\n\n" + e.Message);
+                throw new Exception("Error\n\n", e);
             }
             finally
             {
                 CerrarConexion();
             }
-        }//Modifica filas en DB a través de UPDATE.
+        }
+        public void Update(string sql)//Modifica filas en DB a través de UPDATE.
+        {
+            AbrirConexion();
+            OleDbCommand comando = new OleDbCommand(sql, conexion);
 
 
-        public void AbrirConexion()
+            comando.CommandText = sql;
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error\n\n", e);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }*/
+        #endregion
+
+
+        public void AbrirConexion()//Abre conexión.
         {
             try
             {
@@ -113,10 +115,10 @@ namespace BiblioCaxial
             }
             catch (Exception e)
             {
-                MessageBox.Show("No se puede abrir la conexión a la base de datos.\n\n" + e);
+                throw new Exception("Error\n\n", e);
             }
-        }//Abre conexión.
-        public void CerrarConexion()
+        }
+        public void CerrarConexion()//Cierra conexión.
         {
             try
             {
@@ -127,25 +129,8 @@ namespace BiblioCaxial
             }
             catch (Exception e)
             {
-                MessageBox.Show("No se puede cerrar la conexión a la base de datos.\n\n" + e);
+                throw new Exception("Error\n\n", e);
             }
-        }//Cierra conexión.
-        public void ProbarConexion()
-        {
-            try
-            {
-                AbrirConexion();
-                if (conexion.State == ConnectionState.Open)
-                {
-                    MessageBox.Show("Conexión exitosa a la Base de Datos");
-                }
-            }
-            catch (Exception e)
-            {
-
-                MessageBox.Show("No hay conexión a la Base de Datos.\n\n" + e);
-            }
-            CerrarConexion();
-        }//Prueba conexión.
+        }
     }
 }

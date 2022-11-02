@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DF52E47B-539B-41FC-A4C9-671A4764D36B}</ProjectGuid>
+    <ProjectGuid>{B924BFA2-9C34-4EE3-AFB3-EA362DE9F3C6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BiblioCaxial</RootNamespace>
-    <AssemblyName>BiblioCaxial</AssemblyName>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,36 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatosConexion.cs" />
-    <Compile Include="Inicio.cs">
+    <Compile Include="ModAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="ModAlumno.Designer.cs">
+      <DependentUpon>ModAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios Proveedores\NewProv.cs">
+    <Compile Include="ModProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios Proveedores\NewProv.Designer.cs">
-      <DependentUpon>NewProv.cs</DependentUpon>
+    <Compile Include="ModProfesor.Designer.cs">
+      <DependentUpon>ModProfesor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios Autor\NewAutor.cs">
+    <Compile Include="NuevoAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios Autor\NewAutor.Designer.cs">
-      <DependentUpon>NewAutor.cs</DependentUpon>
+    <Compile Include="NuevoAlumno.Designer.cs">
+      <DependentUpon>NuevoAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios Cliente\NewClient.cs">
+    <Compile Include="NuevoProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios Cliente\NewClient.Designer.cs">
-      <DependentUpon>NewClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NewLibro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewLibro.Designer.cs">
-      <DependentUpon>NewLibro.cs</DependentUpon>
+    <Compile Include="NuevoProfesor.Designer.cs">
+      <DependentUpon>NuevoProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -85,38 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Formularios Proveedores\UpdateProv.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios Proveedores\UpdateProv.Designer.cs">
-      <DependentUpon>UpdateProv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios Autor\UpdateAutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios Autor\UpdateAutor.Designer.cs">
-      <DependentUpon>UpdateAutor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios Cliente\UpdateClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios Cliente\UpdateClient.Designer.cs">
-      <DependentUpon>UpdateClient.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Formularios Autor\NewAutor.resx">
-      <DependentUpon>NewAutor.cs</DependentUpon>
+    <EmbeddedResource Include="ModAlumno.resx">
+      <DependentUpon>ModAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Cliente\NewClient.resx">
-      <DependentUpon>NewClient.cs</DependentUpon>
+    <EmbeddedResource Include="ModProfesor.resx">
+      <DependentUpon>ModProfesor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="NuevoAlumno.resx">
+      <DependentUpon>NuevoAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Proveedores\NewProv.resx">
-      <DependentUpon>NewProv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewLibro.resx">
-      <DependentUpon>NewLibro.cs</DependentUpon>
+    <EmbeddedResource Include="NuevoProfesor.resx">
+      <DependentUpon>NuevoProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -129,16 +101,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Formularios Proveedores\UpdateProv.resx">
-      <DependentUpon>UpdateProv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Autor\UpdateAutor.resx">
-      <DependentUpon>UpdateAutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Cliente\UpdateClient.resx">
-      <DependentUpon>UpdateClient.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,10 +117,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BCaixal.mdb" />
+    <None Include="Resources\EditAlum.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formularios Libros\" />
+    <None Include="Resources\EditProf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NvoAlumn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NvoProf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa Negocios\Capa Negocios.csproj">
+      <Project>{8390a054-9e05-4f7f-bcb9-b8814277eef8}</Project>
+      <Name>Capa Negocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Capa Entidades.csproj">
+      <Project>{1a3ec173-10df-447e-9c13-cbe8fce96094}</Project>
+      <Name>Capa Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

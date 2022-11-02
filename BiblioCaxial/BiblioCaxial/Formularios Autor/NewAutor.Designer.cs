@@ -39,6 +39,8 @@
             this.Btn_AddAutor = new System.Windows.Forms.Button();
             this.tb_ApellAutor = new System.Windows.Forms.TextBox();
             this.tb_NombAutor = new System.Windows.Forms.TextBox();
+            this.cbx_genAutor = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +57,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbx_genAutor);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cbx_paisAutor);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -73,7 +77,7 @@
             // cbx_paisAutor
             // 
             this.cbx_paisAutor.FormattingEnabled = true;
-            this.cbx_paisAutor.Location = new System.Drawing.Point(19, 158);
+            this.cbx_paisAutor.Location = new System.Drawing.Point(19, 126);
             this.cbx_paisAutor.Name = "cbx_paisAutor";
             this.cbx_paisAutor.Size = new System.Drawing.Size(236, 21);
             this.cbx_paisAutor.TabIndex = 7;
@@ -81,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 142);
+            this.label3.Location = new System.Drawing.Point(16, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 6;
@@ -90,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 85);
+            this.label2.Location = new System.Drawing.Point(16, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 5;
@@ -144,10 +148,27 @@
             // 
             // tb_NombAutor
             // 
-            this.tb_NombAutor.Location = new System.Drawing.Point(19, 101);
+            this.tb_NombAutor.Location = new System.Drawing.Point(19, 83);
             this.tb_NombAutor.Name = "tb_NombAutor";
             this.tb_NombAutor.Size = new System.Drawing.Size(236, 20);
             this.tb_NombAutor.TabIndex = 1;
+            // 
+            // cbx_genAutor
+            // 
+            this.cbx_genAutor.FormattingEnabled = true;
+            this.cbx_genAutor.Location = new System.Drawing.Point(19, 171);
+            this.cbx_genAutor.Name = "cbx_genAutor";
+            this.cbx_genAutor.Size = new System.Drawing.Size(236, 21);
+            this.cbx_genAutor.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Género de preferencia:";
             // 
             // NewAutor
             // 
@@ -162,7 +183,7 @@
             this.Name = "NewAutor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewAutor";
+            this.Text = "Agregar autor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -183,5 +204,7 @@
         private System.Windows.Forms.TextBox tb_ApellAutor;
         private System.Windows.Forms.TextBox tb_NombAutor;
         private System.Windows.Forms.ComboBox cbx_paisAutor;
+        private System.Windows.Forms.ComboBox cbx_genAutor;
+        private System.Windows.Forms.Label label4;
     }
 }
