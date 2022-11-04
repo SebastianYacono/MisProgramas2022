@@ -37,29 +37,6 @@
             this.Btn_editClient = new System.Windows.Forms.Button();
             this.Btn_newClient = new System.Windows.Forms.Button();
             this.dgv_Client = new System.Windows.Forms.DataGridView();
-            this.TabLibros = new System.Windows.Forms.TabPage();
-            this.Btn_deleteLibro = new System.Windows.Forms.Button();
-            this.Btn_editLibro = new System.Windows.Forms.Button();
-            this.Btn_newLibro = new System.Windows.Forms.Button();
-            this.dgv_Libros = new System.Windows.Forms.DataGridView();
-            this.TabAutor = new System.Windows.Forms.TabPage();
-            this.Btn_deleteAut = new System.Windows.Forms.Button();
-            this.Btn_editAut = new System.Windows.Forms.Button();
-            this.Btn_newAut = new System.Windows.Forms.Button();
-            this.dgv_Autor = new System.Windows.Forms.DataGridView();
-            this.TabProveed = new System.Windows.Forms.TabPage();
-            this.Btn_deleteProv = new System.Windows.Forms.Button();
-            this.Btn_editProv = new System.Windows.Forms.Button();
-            this.Btn_newProv = new System.Windows.Forms.Button();
-            this.dgv_prov = new System.Windows.Forms.DataGridView();
-            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notificaciones = new System.Windows.Forms.GroupBox();
-            this.LastBook = new System.Windows.Forms.Label();
-            this.lbl_FecHor = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,12 +44,12 @@
             this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teléfono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabLibros = new System.Windows.Forms.TabPage();
+            this.btn_InfoLibro = new System.Windows.Forms.Button();
+            this.Btn_deleteLibro = new System.Windows.Forms.Button();
+            this.Btn_editLibro = new System.Windows.Forms.Button();
+            this.Btn_newLibro = new System.Windows.Forms.Button();
+            this.dgv_Libros = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +61,30 @@
             this.Disponible = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Ubicación = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabAutor = new System.Windows.Forms.TabPage();
+            this.Btn_deleteAut = new System.Windows.Forms.Button();
+            this.Btn_editAut = new System.Windows.Forms.Button();
+            this.Btn_newAut = new System.Windows.Forms.Button();
+            this.dgv_Autor = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabProveed = new System.Windows.Forms.TabPage();
+            this.Btn_deleteProv = new System.Windows.Forms.Button();
+            this.Btn_editProv = new System.Windows.Forms.Button();
+            this.Btn_newProv = new System.Windows.Forms.Button();
+            this.dgv_prov = new System.Windows.Forms.DataGridView();
+            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notificaciones = new System.Windows.Forms.GroupBox();
+            this.lbl_LastBook = new System.Windows.Forms.Label();
+            this.lbl_FecHor = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Control1.SuspendLayout();
             this.TabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Client)).BeginInit();
@@ -194,8 +195,59 @@
             this.dgv_Client.Size = new System.Drawing.Size(563, 186);
             this.dgv_Client.TabIndex = 4;
             // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "id";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.FillWeight = 70F;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.FillWeight = 70F;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Dirección";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 220;
+            // 
+            // Barrio
+            // 
+            this.Barrio.FillWeight = 5F;
+            this.Barrio.HeaderText = "Barrio";
+            this.Barrio.Name = "Barrio";
+            this.Barrio.ReadOnly = true;
+            this.Barrio.Width = 140;
+            // 
+            // Teléfono
+            // 
+            this.Teléfono.FillWeight = 6F;
+            this.Teléfono.HeaderText = "Teléfono";
+            this.Teléfono.Name = "Teléfono";
+            this.Teléfono.ReadOnly = true;
+            // 
+            // MEmail
+            // 
+            this.MEmail.HeaderText = "E-Mail";
+            this.MEmail.Name = "MEmail";
+            this.MEmail.ReadOnly = true;
+            this.MEmail.Width = 200;
+            // 
             // TabLibros
             // 
+            this.TabLibros.Controls.Add(this.btn_InfoLibro);
             this.TabLibros.Controls.Add(this.Btn_deleteLibro);
             this.TabLibros.Controls.Add(this.Btn_editLibro);
             this.TabLibros.Controls.Add(this.Btn_newLibro);
@@ -208,6 +260,16 @@
             this.TabLibros.Text = "Libros";
             this.TabLibros.UseVisualStyleBackColor = true;
             // 
+            // btn_InfoLibro
+            // 
+            this.btn_InfoLibro.Location = new System.Drawing.Point(258, 201);
+            this.btn_InfoLibro.Name = "btn_InfoLibro";
+            this.btn_InfoLibro.Size = new System.Drawing.Size(75, 23);
+            this.btn_InfoLibro.TabIndex = 8;
+            this.btn_InfoLibro.Text = "+ Info";
+            this.btn_InfoLibro.UseVisualStyleBackColor = true;
+            this.btn_InfoLibro.Click += new System.EventHandler(this.btn_InfoLibro_Click);
+            // 
             // Btn_deleteLibro
             // 
             this.Btn_deleteLibro.Location = new System.Drawing.Point(177, 201);
@@ -216,6 +278,7 @@
             this.Btn_deleteLibro.TabIndex = 7;
             this.Btn_deleteLibro.Text = "Eliminar";
             this.Btn_deleteLibro.UseVisualStyleBackColor = true;
+            this.Btn_deleteLibro.Click += new System.EventHandler(this.Btn_deleteLibro_Click);
             // 
             // Btn_editLibro
             // 
@@ -225,6 +288,7 @@
             this.Btn_editLibro.TabIndex = 6;
             this.Btn_editLibro.Text = "Editar";
             this.Btn_editLibro.UseVisualStyleBackColor = true;
+            this.Btn_editLibro.Click += new System.EventHandler(this.Btn_editLibro_Click);
             // 
             // Btn_newLibro
             // 
@@ -260,6 +324,86 @@
             this.dgv_Libros.ReadOnly = true;
             this.dgv_Libros.Size = new System.Drawing.Size(563, 186);
             this.dgv_Libros.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "id";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Título";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Autor";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Género";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 70;
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Visible = false;
+            // 
+            // Idioma
+            // 
+            this.Idioma.HeaderText = "Idioma";
+            this.Idioma.Name = "Idioma";
+            this.Idioma.ReadOnly = true;
+            this.Idioma.Visible = false;
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.ReadOnly = true;
+            this.Proveedor.Visible = false;
+            // 
+            // FechaIngreso
+            // 
+            this.FechaIngreso.HeaderText = "Fecha Ingreso";
+            this.FechaIngreso.Name = "FechaIngreso";
+            this.FechaIngreso.ReadOnly = true;
+            this.FechaIngreso.Visible = false;
+            // 
+            // Disponible
+            // 
+            this.Disponible.HeaderText = "Disp.";
+            this.Disponible.Name = "Disponible";
+            this.Disponible.ReadOnly = true;
+            this.Disponible.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Disponible.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Disponible.Width = 40;
+            // 
+            // Ubicación
+            // 
+            this.Ubicación.HeaderText = "Ubicación";
+            this.Ubicación.Name = "Ubicación";
+            this.Ubicación.ReadOnly = true;
+            this.Ubicación.Width = 60;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
             // 
             // TabAutor
             // 
@@ -324,6 +468,47 @@
             this.dgv_Autor.ReadOnly = true;
             this.dgv_Autor.Size = new System.Drawing.Size(563, 186);
             this.dgv_Autor.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "País";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Genero
+            // 
+            this.Genero.HeaderText = "Género";
+            this.Genero.Name = "Genero";
+            this.Genero.ReadOnly = true;
+            this.Genero.Width = 60;
+            // 
+            // Alias
+            // 
+            this.Alias.HeaderText = "Alias";
+            this.Alias.Name = "Alias";
+            this.Alias.ReadOnly = true;
+            this.Alias.Visible = false;
             // 
             // TabProveed
             // 
@@ -416,7 +601,7 @@
             // 
             // Notificaciones
             // 
-            this.Notificaciones.Controls.Add(this.LastBook);
+            this.Notificaciones.Controls.Add(this.lbl_LastBook);
             this.Notificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Notificaciones.Location = new System.Drawing.Point(16, 277);
             this.Notificaciones.Name = "Notificaciones";
@@ -425,13 +610,13 @@
             this.Notificaciones.TabStop = false;
             this.Notificaciones.Text = "Último libro ingresado";
             // 
-            // LastBook
+            // lbl_LastBook
             // 
-            this.LastBook.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LastBook.Location = new System.Drawing.Point(12, 16);
-            this.LastBook.Name = "LastBook";
-            this.LastBook.Size = new System.Drawing.Size(465, 18);
-            this.LastBook.TabIndex = 0;
+            this.lbl_LastBook.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbl_LastBook.Location = new System.Drawing.Point(12, 16);
+            this.lbl_LastBook.Name = "lbl_LastBook";
+            this.lbl_LastBook.Size = new System.Drawing.Size(465, 18);
+            this.lbl_LastBook.TabIndex = 0;
             // 
             // lbl_FecHor
             // 
@@ -447,177 +632,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "id";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.FillWeight = 70F;
-            this.dataGridViewTextBoxColumn11.HeaderText = "Apellido";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.FillWeight = 70F;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Dirección";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 220;
-            // 
-            // Barrio
-            // 
-            this.Barrio.FillWeight = 5F;
-            this.Barrio.HeaderText = "Barrio";
-            this.Barrio.Name = "Barrio";
-            this.Barrio.ReadOnly = true;
-            this.Barrio.Width = 140;
-            // 
-            // Teléfono
-            // 
-            this.Teléfono.FillWeight = 6F;
-            this.Teléfono.HeaderText = "Teléfono";
-            this.Teléfono.Name = "Teléfono";
-            this.Teléfono.ReadOnly = true;
-            // 
-            // MEmail
-            // 
-            this.MEmail.HeaderText = "E-Mail";
-            this.MEmail.Name = "MEmail";
-            this.MEmail.ReadOnly = true;
-            this.MEmail.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Apellido";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "País";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Genero
-            // 
-            this.Genero.HeaderText = "Género";
-            this.Genero.Name = "Genero";
-            this.Genero.ReadOnly = true;
-            this.Genero.Width = 60;
-            // 
-            // Alias
-            // 
-            this.Alias.HeaderText = "Alias";
-            this.Alias.Name = "Alias";
-            this.Alias.ReadOnly = true;
-            this.Alias.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "id";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Título";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Autor";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Género";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 70;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            this.Descripción.Visible = false;
-            // 
-            // Idioma
-            // 
-            this.Idioma.HeaderText = "Idioma";
-            this.Idioma.Name = "Idioma";
-            this.Idioma.ReadOnly = true;
-            this.Idioma.Visible = false;
-            // 
-            // Proveedor
-            // 
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.Name = "Proveedor";
-            this.Proveedor.ReadOnly = true;
-            this.Proveedor.Visible = false;
-            // 
-            // FechaIngreso
-            // 
-            this.FechaIngreso.HeaderText = "Fecha Ingreso";
-            this.FechaIngreso.Name = "FechaIngreso";
-            this.FechaIngreso.ReadOnly = true;
-            this.FechaIngreso.Visible = false;
-            // 
-            // Disponible
-            // 
-            this.Disponible.HeaderText = "Disp.";
-            this.Disponible.Name = "Disponible";
-            this.Disponible.ReadOnly = true;
-            this.Disponible.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Disponible.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Disponible.Width = 40;
-            // 
-            // Ubicación
-            // 
-            this.Ubicación.HeaderText = "Ubicación";
-            this.Ubicación.Name = "Ubicación";
-            this.Ubicación.ReadOnly = true;
-            this.Ubicación.Width = 60;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Visible = false;
             // 
             // Principal
             // 
@@ -657,7 +671,7 @@
         private System.Windows.Forms.TabPage TabLibros;
         private System.Windows.Forms.TabPage TabWelc;
         private System.Windows.Forms.GroupBox Notificaciones;
-        private System.Windows.Forms.Label LastBook;
+        private System.Windows.Forms.Label lbl_LastBook;
         private System.Windows.Forms.Button Btn_deleteProv;
         private System.Windows.Forms.Button Btn_editProv;
         private System.Windows.Forms.Button Btn_newProv;
@@ -706,5 +720,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Disponible;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ubicación;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Button btn_InfoLibro;
     }
 }

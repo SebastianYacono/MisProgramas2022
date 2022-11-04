@@ -30,7 +30,7 @@
         {
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_Editar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_Horas = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,14 +79,14 @@
             this.btn_limpiar.UseVisualStyleBackColor = true;
             this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
             // 
-            // btn_Agregar
+            // btn_Editar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(156, 392);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 12;
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Location = new System.Drawing.Point(156, 392);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Editar.TabIndex = 12;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -312,7 +312,7 @@
             this.ClientSize = new System.Drawing.Size(396, 430);
             this.Controls.Add(this.btn_Cerrar);
             this.Controls.Add(this.btn_limpiar);
-            this.Controls.Add(this.btn_Agregar);
+            this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -331,7 +331,7 @@
 
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Button btn_limpiar;
-        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tb_Horas;

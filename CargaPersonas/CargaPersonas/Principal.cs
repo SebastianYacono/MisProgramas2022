@@ -14,11 +14,15 @@ namespace CargaPersonas
 {
     public partial class Principal : Form
     {
+        NegAlumno DatosObjAlumno = new NegAlumno();
+        NegProfesor DatosObjProfesor = new NegProfesor();
         public Principal()
         {
             InitializeComponent();
             CrearDgvAlumnos();
+            LlenarDgvAlumnos();
             CrearDgvProfesor();
+            LlenarDgvProfesor();
         }
         #region Tab Alumnos
         private void CrearDgvAlumnos()
@@ -53,10 +57,27 @@ namespace CargaPersonas
 
             dgv_Alumn.Columns[0].Visible = false;
         }
+        public void LlenarDgvAlumnos()
+        {
+            dgv_Alumn.Rows.Clear();
+
+            DataSet ds = new DataSet();
+            ds = DatosObjAlumno.listaDeAlumnos("SELECT");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    dgv_Alumn.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7], dr[8].ToString(), dr[9].ToString(), dr[10].ToString(), dr[11], dr[12]);
+                }
+            }
+            else
+                MessageBox.Show("No hay alumnos cargados en el sistema");
+        }
 
         private void Btn_addAlumn_Click(object sender, EventArgs e)
         {
-            NuevoAlumno nuevoAlumno = new NuevoAlumno();
+            NuevoAlumno nuevoAlumno = new NuevoAlumno(this);
             nuevoAlumno.ShowDialog();
         }
         private void Btn_editAlumn_Click(object sender, EventArgs e)
@@ -74,7 +95,7 @@ namespace CargaPersonas
             dgv_Prof.Columns.Add("2", "Nombre");
             dgv_Prof.Columns.Add("3", "Domicilio");
             dgv_Prof.Columns.Add("4", "DNI");
-            dgv_Prof.Columns.Add("5", "Fecha de nacimiento");
+            dgv_Prof.Columns.Add("5", "F.Nac.");
             dgv_Prof.Columns.Add("6", "Teléfono");
             dgv_Prof.Columns.Add("7", "E-Mail");
             dgv_Prof.Columns.Add("8", "Provincia");
@@ -97,6 +118,24 @@ namespace CargaPersonas
 
             dgv_Prof.Columns[0].Visible = false;
         }
+        public void LlenarDgvProfesor()
+        {
+            dgv_Prof.Rows.Clear();
+
+            DataSet ds = new DataSet();
+            ds = DatosObjProfesor.listaDeProfesores("SELECT");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    dgv_Prof.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7], dr[8].ToString(), dr[9].ToString(), dr[10], dr[11].ToString());
+                }
+            }
+            else
+                MessageBox.Show("No hay profesores cargados en el sistema");
+        }
+
 
         private void Btn_addProf_Click(object sender, EventArgs e)
         {

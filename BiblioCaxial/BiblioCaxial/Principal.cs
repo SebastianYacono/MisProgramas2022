@@ -132,7 +132,7 @@ namespace BiblioCaxial
 
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT LIBROS.IdLibro, LIBROS.Titulo, AUTOR.Alias, GENERO.Genero, LIBROS.Descripcion, IDIOMA.Idioma, PROVEEDOR.Nombre, LIBROS.FechaIng, LIBROS.Disponible, LIBROS.Ubicacion, ESTADO.Estado FROM PROVEEDOR INNER JOIN (IDIOMA INNER JOIN (ESTADO INNER JOIN ((AUTOR INNER JOIN GENERO ON AUTOR.idGenero = GENERO.idGenero) INNER JOIN LIBROS ON (GENERO.idGenero = LIBROS.idGenero) AND (AUTOR.idAutor = LIBROS.idAutor)) ON ESTADO.idEstado = LIBROS.idEstado) ON IDIOMA.idIdioma = LIBROS.idIdioma) ON PROVEEDOR.idProveedor = LIBROS.idProveedor;");
+            datosConexion.Select("SELECT LIBROS.IdLibro, LIBROS.Titulo, AUTOR.Alias, GENERO.Genero, LIBROS.Descripcion, IDIOMA.Idioma, PROVEEDOR.Nombre, LIBROS.FechaIng, LIBROS.Disponible, LIBROS.Ubicacion, ESTADO.Estado FROM PROVEEDOR INNER JOIN (IDIOMA INNER JOIN (GENERO INNER JOIN (ESTADO INNER JOIN (AUTOR INNER JOIN LIBROS ON AUTOR.idAutor = LIBROS.idAutor) ON ESTADO.idEstado = LIBROS.idEstado) ON GENERO.idGenero = LIBROS.idGenero) ON IDIOMA.idIdioma = LIBROS.idIdioma) ON PROVEEDOR.idProveedor = LIBROS.idProveedor;");
             while (datosConexion.reader.Read())
             {
                 List<object> CamposLibros = new List<object>();
@@ -187,10 +187,117 @@ namespace BiblioCaxial
 
             datosConexion.CerrarConexion();
         }
-        private void Btn_newLibro_Click(object sender, EventArgs e)
+        private void Btn_newLibro_Click(object sender, EventArgs e)//Comando para crear el libro.
         {
             NewLibro newLibro = new NewLibro(this);
             newLibro.ShowDialog();
+        }
+        private void Btn_deleteLibro_Click(object sender, EventArgs e)//Comando para eliminar libro.
+        {
+            string valor;
+            valor = dgv_Libros.Rows[dgv_Libros.CurrentRow.Index].Cells[0].Value.ToString();
+
+            DialogResult r = MessageBox.Show("¿Quieres eliminar este elemento?", "Eliminar libro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (r == DialogResult.Yes)
+            {
+                DatosConexion datosConexion = new DatosConexion();
+                datosConexion.Delete("DELETE FROM LIBROS WHERE(idLibro = " + valor + ")");
+
+                LlenarDgvLibro();
+
+                MessageBox.Show("El libro ha sido eliminado exitosamente", "Eliminar libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Btn_editLibro_Click(object sender, EventArgs e)//Comando para editar el libro.
+        {
+            var fila = dgv_Libros.CurrentRow;
+            int id = 0;
+            string titulo = "";
+            string autor = "";
+            string genero = "";
+            string desc = "";
+            string idioma = "";
+            string prov = "";
+            string fecIng = "";
+            bool disp = true;
+            string ubi = "";
+            string estado = "";
+
+            if (fila != null)
+            {
+                if (fila.Cells[0].Value != null)
+                    id = Convert.ToInt32(fila.Cells[0].Value);
+                if (fila.Cells[1].Value != null)
+                    titulo = fila.Cells[1].Value.ToString();
+                if (fila.Cells[2].Value != null)
+                    autor = fila.Cells[2].Value.ToString();
+                if (fila.Cells[3].Value != null)
+                    genero = fila.Cells[3].Value.ToString();
+                if (fila.Cells[4].Value != null)
+                    desc = fila.Cells[4].Value.ToString();
+                if (fila.Cells[5].Value != null)
+                    idioma = fila.Cells[5].Value.ToString();
+                if (fila.Cells[6].Value != null)
+                    prov = fila.Cells[6].Value.ToString();
+                if (fila.Cells[7].Value != null)
+                    fecIng = fila.Cells[7].Value.ToString();
+                if (fila.Cells[8].Value != null)
+                    disp = Convert.ToBoolean(fila.Cells[8].Value);
+                if (fila.Cells[9].Value != null)
+                    ubi = fila.Cells[9].Value.ToString();
+                if (fila.Cells[10].Value != null)
+                    estado = fila.Cells[10].Value.ToString();
+                
+            }
+            //Lleva al form UpdateAut
+            UpdateLibro updateLibro = new UpdateLibro(this, id, titulo, autor, genero, desc, idioma, prov, fecIng, disp, ubi, estado);
+            updateLibro.ShowDialog();
+        }
+        private void btn_InfoLibro_Click(object sender, EventArgs e)
+        {
+            var fila = dgv_Libros.CurrentRow;
+            int id = 0;
+            string titulo = "";
+            string autor = "";
+            string genero = "";
+            string desc = "";
+            string idioma = "";
+            string prov = "";
+            string fecIng = "";
+            bool disp = true;
+            string ubi = "";
+            string estado = "";
+
+            if (fila != null)
+            {
+                if (fila.Cells[0].Value != null)
+                    id = Convert.ToInt32(fila.Cells[0].Value);
+                if (fila.Cells[1].Value != null)
+                    titulo = fila.Cells[1].Value.ToString();
+                if (fila.Cells[2].Value != null)
+                    autor = fila.Cells[2].Value.ToString();
+                if (fila.Cells[3].Value != null)
+                    genero = fila.Cells[3].Value.ToString();
+                if (fila.Cells[4].Value != null)
+                    desc = fila.Cells[4].Value.ToString();
+                if (fila.Cells[5].Value != null)
+                    idioma = fila.Cells[5].Value.ToString();
+                if (fila.Cells[6].Value != null)
+                    prov = fila.Cells[6].Value.ToString();
+                if (fila.Cells[7].Value != null)
+                    fecIng = fila.Cells[7].Value.ToString();
+                if (fila.Cells[8].Value != null)
+                    disp = Convert.ToBoolean(fila.Cells[8].Value);
+                if (fila.Cells[9].Value != null)
+                    ubi = fila.Cells[9].Value.ToString();
+                if (fila.Cells[10].Value != null)
+                    estado = fila.Cells[10].Value.ToString();
+
+            }
+            //Lleva al form UpdateAut
+            InfLibro infoLibro = new InfLibro (this, titulo, autor, genero, desc, idioma, prov, fecIng,ubi, estado);
+            infoLibro.ShowDialog();
         }
         #endregion
 
@@ -393,6 +500,6 @@ namespace BiblioCaxial
 
         #endregion
 
-       
+
     }
 }

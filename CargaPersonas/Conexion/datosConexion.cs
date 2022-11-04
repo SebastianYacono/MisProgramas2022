@@ -12,7 +12,7 @@ namespace Conexion
     {
         protected OleDbConnection conexion;
         public OleDbDataReader reader;
-        protected string cadenaCon = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\DataBases\PersFinal.mdb";
+        protected string cadenaCon = @"Provider=Microsoft.Jet.OLEDB.4.0;;Data Source=C:\DataBases\PersFinal.mdb";
 
         public datosConexion()
         {

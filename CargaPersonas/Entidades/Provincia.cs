@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Provincia
+    public class Provincia
     {
         #region Constructor
         public Provincia()

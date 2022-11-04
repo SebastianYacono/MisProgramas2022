@@ -7,21 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Negocios;
 
 namespace CargaPersonas
 {
     public partial class ModAlumno : Form
     {
+        NegProvincia negProvincia = new NegProvincia();
         public ModAlumno()
         {
             InitializeComponent();
+            LlenarCbxProv();
         }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
             limpiarForm();
@@ -38,11 +41,16 @@ namespace CargaPersonas
             cbx_Loc.Text = "";
             tb_Tel.Clear();
             tb_Mail.Clear();
-            tb_Anio.Clear();
-            tb_Div.Clear();
-            tb_Turno.Clear();
+            cbx_Anio.Text = "";
+            cbx_Div.Text = "";
+            cbx_Turno.Text = "";
         }
+        void LlenarCbxProv()
+        {
+            cbx_Prov.DataSource = negProvincia.ObtenerProv();
+            cbx_Prov.DisplayMember = "p_prov";
+            cbx_Prov.ValueMember = "p_idProv";
 
-
+        }
     }
 }

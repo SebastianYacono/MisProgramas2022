@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatosConexion.cs" />
+    <Compile Include="Formularios Libros\InfLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Libros\InfLibro.Designer.cs">
+      <DependentUpon>InfLibro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,10 +77,10 @@
     <Compile Include="Formularios Cliente\NewClient.Designer.cs">
       <DependentUpon>NewClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewLibro.cs">
+    <Compile Include="Formularios Libros\NewLibro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewLibro.Designer.cs">
+    <Compile Include="Formularios Libros\NewLibro.Designer.cs">
       <DependentUpon>NewLibro.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
@@ -103,11 +109,20 @@
     <Compile Include="Formularios Cliente\UpdateClient.Designer.cs">
       <DependentUpon>UpdateClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios Libros\UpdateLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Libros\UpdateLibro.Designer.cs">
+      <DependentUpon>UpdateLibro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios Autor\NewAutor.resx">
       <DependentUpon>NewAutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios Cliente\NewClient.resx">
       <DependentUpon>NewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Libros\InfLibro.resx">
+      <DependentUpon>InfLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -115,21 +130,12 @@
     <EmbeddedResource Include="Formularios Proveedores\NewProv.resx">
       <DependentUpon>NewProv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewLibro.resx">
+    <EmbeddedResource Include="Formularios Libros\NewLibro.resx">
       <DependentUpon>NewLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Formularios Proveedores\UpdateProv.resx">
       <DependentUpon>UpdateProv.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,10 +145,17 @@
     <EmbeddedResource Include="Formularios Cliente\UpdateClient.resx">
       <DependentUpon>UpdateClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Libros\UpdateLibro.resx">
+      <DependentUpon>UpdateLibro.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Resources.designer.cs">
+      <DependentUpon>Resources.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -154,9 +167,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BCaixal.mdb" />
+    <None Include="Resources\TitleLibInfo.png" />
+    <None Include="Resources\IconRen.png" />
+    <None Include="Resources\IconDev.png" />
+    <None Include="Resources\IconAlq.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios Libros\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

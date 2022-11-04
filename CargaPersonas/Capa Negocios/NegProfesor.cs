@@ -9,16 +9,16 @@ using Entidades;
 
 namespace Negocios
 {
-    internal class NegProfesor
+    public class NegProfesor
     {
         AdmProfesor DatosObjProfesor = new AdmProfesor();
 
-        public int abmProductos(string accion, Profesores objProfesor)
+        public int ABM_Profesores(string accion, Profesores objProfesor)
         {
             return DatosObjProfesor.ABM_Profe(accion, objProfesor);
         }
 
-        public DataSet listadoProductos(string cual)
+        public DataSet listaDeProfesores(string cual)
         {
             return DatosObjProfesor.listaProfe(cual);
         }

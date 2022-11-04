@@ -22,6 +22,20 @@ namespace Entidades
             idProv = cIdProv;
             idLoc = cIdLoc;
         }
+
+        public Persona (string cNomb, string cApell, string cDom, long cDni, DateTime cFechaNac, long cTel, string cMail, int cIdProv, int cIdLoc)
+        {
+            
+            nomb = cNomb;
+            apell = cApell;
+            dom = cDom;
+            dni = cDni;
+            fechaNac = cFechaNac;
+            tel = cTel;
+            mail = cMail;
+            idProv = cIdProv;
+            idLoc = cIdLoc;
+        }
         #endregion
 
         #region Atributos

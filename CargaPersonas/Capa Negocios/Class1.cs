@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BiblioCaxial
+namespace Capa_Negocios
 {
-    internal class NewLibro
+    public class Class1
     {
     }
 }

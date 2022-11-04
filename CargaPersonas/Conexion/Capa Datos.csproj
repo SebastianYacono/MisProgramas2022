@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdmAlumno.cs" />
     <Compile Include="AdmProfesor.cs" />
+    <Compile Include="AdmProvincia.cs" />
     <Compile Include="datosConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

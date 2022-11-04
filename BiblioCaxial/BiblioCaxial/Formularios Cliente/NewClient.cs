@@ -52,8 +52,7 @@ namespace BiblioCaxial
             limpiarForm();
         }
         #endregion
-
-
+        
         #region Métodos fuera de los botones
         protected void Agregar()
         {

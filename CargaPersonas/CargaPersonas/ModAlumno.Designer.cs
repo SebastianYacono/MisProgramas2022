@@ -30,13 +30,10 @@
         {
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_Editar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_Turno = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.tb_Div = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.tb_Anio = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,6 +54,9 @@
             this.tb_Apell = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbx_Turno = new System.Windows.Forms.ComboBox();
+            this.cbx_Div = new System.Windows.Forms.ComboBox();
+            this.cbx_Anio = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -81,22 +81,22 @@
             this.btn_limpiar.UseVisualStyleBackColor = true;
             this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
             // 
-            // btn_Agregar
+            // btn_Editar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(156, 392);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 7;
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Location = new System.Drawing.Point(156, 392);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Editar.TabIndex = 7;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tb_Turno);
+            this.groupBox1.Controls.Add(this.cbx_Turno);
+            this.groupBox1.Controls.Add(this.cbx_Div);
+            this.groupBox1.Controls.Add(this.cbx_Anio);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.tb_Div);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.tb_Anio);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
@@ -122,13 +122,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // tb_Turno
-            // 
-            this.tb_Turno.Location = new System.Drawing.Point(244, 261);
-            this.tb_Turno.Name = "tb_Turno";
-            this.tb_Turno.Size = new System.Drawing.Size(108, 20);
-            this.tb_Turno.TabIndex = 23;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -137,13 +130,6 @@
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 22;
             this.label12.Text = "Turno:";
-            // 
-            // tb_Div
-            // 
-            this.tb_Div.Location = new System.Drawing.Point(131, 261);
-            this.tb_Div.Name = "tb_Div";
-            this.tb_Div.Size = new System.Drawing.Size(108, 20);
-            this.tb_Div.TabIndex = 21;
             // 
             // label11
             // 
@@ -154,21 +140,14 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "División:";
             // 
-            // tb_Anio
-            // 
-            this.tb_Anio.Location = new System.Drawing.Point(19, 261);
-            this.tb_Anio.Name = "tb_Anio";
-            this.tb_Anio.Size = new System.Drawing.Size(108, 20);
-            this.tb_Anio.TabIndex = 19;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(16, 245);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 18;
-            this.label10.Text = "Año lectivo:";
+            this.label10.Text = "Curso:";
             // 
             // label8
             // 
@@ -325,6 +304,48 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // cbx_Turno
+            // 
+            this.cbx_Turno.FormattingEnabled = true;
+            this.cbx_Turno.Items.AddRange(new object[] {
+            "Mañana",
+            "Tarde",
+            "Noche"});
+            this.cbx_Turno.Location = new System.Drawing.Point(244, 261);
+            this.cbx_Turno.Name = "cbx_Turno";
+            this.cbx_Turno.Size = new System.Drawing.Size(108, 21);
+            this.cbx_Turno.TabIndex = 29;
+            // 
+            // cbx_Div
+            // 
+            this.cbx_Div.FormattingEnabled = true;
+            this.cbx_Div.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"});
+            this.cbx_Div.Location = new System.Drawing.Point(131, 261);
+            this.cbx_Div.Name = "cbx_Div";
+            this.cbx_Div.Size = new System.Drawing.Size(108, 21);
+            this.cbx_Div.TabIndex = 28;
+            // 
+            // cbx_Anio
+            // 
+            this.cbx_Anio.FormattingEnabled = true;
+            this.cbx_Anio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cbx_Anio.Location = new System.Drawing.Point(19, 261);
+            this.cbx_Anio.Name = "cbx_Anio";
+            this.cbx_Anio.Size = new System.Drawing.Size(108, 21);
+            this.cbx_Anio.TabIndex = 27;
+            // 
             // ModAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,7 +353,7 @@
             this.ClientSize = new System.Drawing.Size(396, 430);
             this.Controls.Add(this.btn_Cerrar);
             this.Controls.Add(this.btn_limpiar);
-            this.Controls.Add(this.btn_Agregar);
+            this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -351,14 +372,11 @@
 
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Button btn_limpiar;
-        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tb_Turno;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox tb_Div;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tb_Anio;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -378,5 +396,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_Apell;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbx_Turno;
+        private System.Windows.Forms.ComboBox cbx_Div;
+        private System.Windows.Forms.ComboBox cbx_Anio;
     }
 }
