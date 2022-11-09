@@ -46,18 +46,21 @@ namespace BiblioCaxial
             tb_telClient.Text = telefono.ToString();
             tb_mailClient.Text = mail;
 
+            
+
         }
 
         #region Métodos de los botones
         private void Btn_EditUClient_Click(object sender, EventArgs e)
         {
             int idBarrio = Convert.ToInt32(cbx_barrioClient.SelectedIndex);
+            string alias = tb_ApellClient.Text + ", " + tb_nombClient.Text;
 
             idBarrio++;
 
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Update("UPDATE CLIENTE SET Apellido = '" + tb_ApellClient.Text + "', Nombre = '" + tb_nombClient.Text + "', Direccion = '" + tb_dirClient.Text + "', idBarrio = " + idBarrio + ", Telefono = " + tb_telClient.Text + ", Email = '" + tb_mailClient.Text + "' WHERE idCliente = " + id);
+            datosConexion.Update("UPDATE CLIENTE SET Apellido = '" + tb_ApellClient.Text + "', Nombre = '" + tb_nombClient.Text + "', Direccion = '" + tb_dirClient.Text + "', idBarrio = " + idBarrio + ", Telefono = " + tb_telClient.Text + ", Email = '" + tb_mailClient.Text + "', AliasCl = '" + alias +"' WHERE idCliente = " + id);
             Thread.Sleep(1000);
             Agregar();
 

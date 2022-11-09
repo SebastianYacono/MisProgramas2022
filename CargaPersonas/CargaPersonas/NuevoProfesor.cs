@@ -15,6 +15,7 @@ namespace CargaPersonas
     public partial class NuevoProfesor : Form
     {
         NegProvincia negProvincia = new NegProvincia();
+        NegLocalidad negLocalidad = new NegLocalidad();
         public NuevoProfesor()
         {
             InitializeComponent();
@@ -45,13 +46,20 @@ namespace CargaPersonas
             tb_Mail.Clear();
             tb_Legajo.Clear();
             tb_Horas.Clear();
+            cbx_Loc.Enabled = false;
         }
         void LlenarCbxProv()
         {
             cbx_Prov.DataSource = negProvincia.ObtenerProv();
             cbx_Prov.DisplayMember = "p_prov";
             cbx_Prov.ValueMember = "p_idProv";
-
+        }
+        private void cbx_Prov_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cbx_Loc.Enabled = true;
+            cbx_Loc.DataSource = negLocalidad.ObtenerLoc(Convert.ToInt32(cbx_Prov.SelectedValue));
+            cbx_Loc.DisplayMember = "p_localidad";
+            cbx_Loc.ValueMember = "p_idLoc";
         }
     }
 }

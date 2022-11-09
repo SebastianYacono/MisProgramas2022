@@ -15,6 +15,7 @@ namespace CargaPersonas
     public partial class ModAlumno : Form
     {
         NegProvincia negProvincia = new NegProvincia();
+        NegLocalidad negLocalidad = new NegLocalidad();
         public ModAlumno()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace CargaPersonas
             cbx_Anio.Text = "";
             cbx_Div.Text = "";
             cbx_Turno.Text = "";
+            cbx_Loc.Enabled = false;
         }
         void LlenarCbxProv()
         {
@@ -51,6 +53,13 @@ namespace CargaPersonas
             cbx_Prov.DisplayMember = "p_prov";
             cbx_Prov.ValueMember = "p_idProv";
 
+        }
+        private void cbx_Prov_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cbx_Loc.Enabled = true;
+            cbx_Loc.DataSource = negLocalidad.ObtenerLoc(Convert.ToInt32(cbx_Prov.SelectedValue));
+            cbx_Loc.DisplayMember = "p_localidad";
+            cbx_Loc.ValueMember = "p_idLoc";
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Localidad
+    public class Localidad
     {
         #region Constructor
         public Localidad()

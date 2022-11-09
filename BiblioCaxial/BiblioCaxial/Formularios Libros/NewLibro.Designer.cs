@@ -28,8 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbx_idiomaLibro = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tb_ubi = new System.Windows.Forms.TextBox();
+            this.rtb_descLibro = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtp_fecIngLibro = new System.Windows.Forms.DateTimePicker();
+            this.cbx_provLibro = new System.Windows.Forms.ComboBox();
+            this.cbx_autorLibro = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbx_estLibro = new System.Windows.Forms.ComboBox();
+            this.cbx_generoLibro = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,36 +51,15 @@
             this.Btn_CloseLibro = new System.Windows.Forms.Button();
             this.Btn_AddLibro = new System.Windows.Forms.Button();
             this.tb_tituloLibro = new System.Windows.Forms.TextBox();
-            this.cbx_generoLibro = new System.Windows.Forms.ComboBox();
-            this.cbx_estLibro = new System.Windows.Forms.ComboBox();
-            this.cbx_autorLibro = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbx_provLibro = new System.Windows.Forms.ComboBox();
-            this.dtp_fecIngLibro = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.rtb_descLibro = new System.Windows.Forms.RichTextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tb_ubi = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.rb_Yes = new System.Windows.Forms.RadioButton();
             this.rb_No = new System.Windows.Forms.RadioButton();
-            this.cbx_idiomaLibro = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.rb_Yes = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(118, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(193, 24);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "CARGA DE LIBROS";
             // 
             // groupBox1
             // 
@@ -101,6 +91,108 @@
             this.groupBox1.Size = new System.Drawing.Size(415, 356);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // cbx_idiomaLibro
+            // 
+            this.cbx_idiomaLibro.FormattingEnabled = true;
+            this.cbx_idiomaLibro.Location = new System.Drawing.Point(19, 118);
+            this.cbx_idiomaLibro.Name = "cbx_idiomaLibro";
+            this.cbx_idiomaLibro.Size = new System.Drawing.Size(139, 21);
+            this.cbx_idiomaLibro.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 102);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Idioma:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(160, 102);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Ubicación:";
+            // 
+            // tb_ubi
+            // 
+            this.tb_ubi.Location = new System.Drawing.Point(163, 118);
+            this.tb_ubi.Name = "tb_ubi";
+            this.tb_ubi.Size = new System.Drawing.Size(66, 20);
+            this.tb_ubi.TabIndex = 23;
+            // 
+            // rtb_descLibro
+            // 
+            this.rtb_descLibro.Location = new System.Drawing.Point(19, 199);
+            this.rtb_descLibro.Name = "rtb_descLibro";
+            this.rtb_descLibro.Size = new System.Drawing.Size(376, 72);
+            this.rtb_descLibro.TabIndex = 22;
+            this.rtb_descLibro.Text = "";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(259, 142);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Fecha de ingreso:";
+            // 
+            // dtp_fecIngLibro
+            // 
+            this.dtp_fecIngLibro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecIngLibro.Location = new System.Drawing.Point(262, 159);
+            this.dtp_fecIngLibro.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtp_fecIngLibro.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.dtp_fecIngLibro.Name = "dtp_fecIngLibro";
+            this.dtp_fecIngLibro.Size = new System.Drawing.Size(133, 20);
+            this.dtp_fecIngLibro.TabIndex = 19;
+            this.dtp_fecIngLibro.Value = new System.DateTime(2022, 10, 30, 22, 29, 53, 0);
+            // 
+            // cbx_provLibro
+            // 
+            this.cbx_provLibro.FormattingEnabled = true;
+            this.cbx_provLibro.Location = new System.Drawing.Point(19, 159);
+            this.cbx_provLibro.Name = "cbx_provLibro";
+            this.cbx_provLibro.Size = new System.Drawing.Size(237, 21);
+            this.cbx_provLibro.TabIndex = 18;
+            // 
+            // cbx_autorLibro
+            // 
+            this.cbx_autorLibro.FormattingEnabled = true;
+            this.cbx_autorLibro.Location = new System.Drawing.Point(19, 78);
+            this.cbx_autorLibro.Name = "cbx_autorLibro";
+            this.cbx_autorLibro.Size = new System.Drawing.Size(231, 21);
+            this.cbx_autorLibro.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Autor:";
+            // 
+            // cbx_estLibro
+            // 
+            this.cbx_estLibro.FormattingEnabled = true;
+            this.cbx_estLibro.Location = new System.Drawing.Point(235, 118);
+            this.cbx_estLibro.Name = "cbx_estLibro";
+            this.cbx_estLibro.Size = new System.Drawing.Size(160, 21);
+            this.cbx_estLibro.TabIndex = 15;
+            // 
+            // cbx_generoLibro
+            // 
+            this.cbx_generoLibro.FormattingEnabled = true;
+            this.cbx_generoLibro.Location = new System.Drawing.Point(256, 78);
+            this.cbx_generoLibro.Name = "cbx_generoLibro";
+            this.cbx_generoLibro.Size = new System.Drawing.Size(139, 21);
+            this.cbx_generoLibro.TabIndex = 14;
             // 
             // label6
             // 
@@ -193,91 +285,6 @@
             this.tb_tituloLibro.Size = new System.Drawing.Size(376, 20);
             this.tb_tituloLibro.TabIndex = 0;
             // 
-            // cbx_generoLibro
-            // 
-            this.cbx_generoLibro.FormattingEnabled = true;
-            this.cbx_generoLibro.Location = new System.Drawing.Point(256, 78);
-            this.cbx_generoLibro.Name = "cbx_generoLibro";
-            this.cbx_generoLibro.Size = new System.Drawing.Size(139, 21);
-            this.cbx_generoLibro.TabIndex = 14;
-            // 
-            // cbx_estLibro
-            // 
-            this.cbx_estLibro.FormattingEnabled = true;
-            this.cbx_estLibro.Location = new System.Drawing.Point(235, 118);
-            this.cbx_estLibro.Name = "cbx_estLibro";
-            this.cbx_estLibro.Size = new System.Drawing.Size(160, 21);
-            this.cbx_estLibro.TabIndex = 15;
-            // 
-            // cbx_autorLibro
-            // 
-            this.cbx_autorLibro.FormattingEnabled = true;
-            this.cbx_autorLibro.Location = new System.Drawing.Point(19, 78);
-            this.cbx_autorLibro.Name = "cbx_autorLibro";
-            this.cbx_autorLibro.Size = new System.Drawing.Size(231, 21);
-            this.cbx_autorLibro.TabIndex = 17;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 62);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Autor:";
-            // 
-            // cbx_provLibro
-            // 
-            this.cbx_provLibro.FormattingEnabled = true;
-            this.cbx_provLibro.Location = new System.Drawing.Point(19, 159);
-            this.cbx_provLibro.Name = "cbx_provLibro";
-            this.cbx_provLibro.Size = new System.Drawing.Size(237, 21);
-            this.cbx_provLibro.TabIndex = 18;
-            // 
-            // dtp_fecIngLibro
-            // 
-            this.dtp_fecIngLibro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_fecIngLibro.Location = new System.Drawing.Point(262, 159);
-            this.dtp_fecIngLibro.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtp_fecIngLibro.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
-            this.dtp_fecIngLibro.Name = "dtp_fecIngLibro";
-            this.dtp_fecIngLibro.Size = new System.Drawing.Size(133, 20);
-            this.dtp_fecIngLibro.TabIndex = 19;
-            this.dtp_fecIngLibro.Value = new System.DateTime(2022, 10, 30, 22, 29, 53, 0);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(259, 142);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Fecha de ingreso:";
-            // 
-            // rtb_descLibro
-            // 
-            this.rtb_descLibro.Location = new System.Drawing.Point(19, 199);
-            this.rtb_descLibro.Name = "rtb_descLibro";
-            this.rtb_descLibro.Size = new System.Drawing.Size(376, 72);
-            this.rtb_descLibro.TabIndex = 22;
-            this.rtb_descLibro.Text = "";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(160, 102);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Ubicación:";
-            // 
-            // tb_ubi
-            // 
-            this.tb_ubi.Location = new System.Drawing.Point(163, 118);
-            this.tb_ubi.Name = "tb_ubi";
-            this.tb_ubi.Size = new System.Drawing.Size(66, 20);
-            this.tb_ubi.TabIndex = 23;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rb_No);
@@ -289,14 +296,16 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
-            // label11
+            // rb_No
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 15);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(183, 13);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "¿El libro está disponible para alquilar?";
+            this.rb_No.AutoSize = true;
+            this.rb_No.Location = new System.Drawing.Point(312, 13);
+            this.rb_No.Name = "rb_No";
+            this.rb_No.Size = new System.Drawing.Size(39, 17);
+            this.rb_No.TabIndex = 27;
+            this.rb_No.TabStop = true;
+            this.rb_No.Text = "No";
+            this.rb_No.UseVisualStyleBackColor = true;
             // 
             // rb_Yes
             // 
@@ -310,40 +319,30 @@
             this.rb_Yes.Text = "Si";
             this.rb_Yes.UseVisualStyleBackColor = true;
             // 
-            // rb_No
+            // label11
             // 
-            this.rb_No.AutoSize = true;
-            this.rb_No.Location = new System.Drawing.Point(312, 13);
-            this.rb_No.Name = "rb_No";
-            this.rb_No.Size = new System.Drawing.Size(39, 17);
-            this.rb_No.TabIndex = 27;
-            this.rb_No.TabStop = true;
-            this.rb_No.Text = "No";
-            this.rb_No.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(183, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "¿El libro está disponible para alquilar?";
             // 
-            // cbx_idiomaLibro
+            // pictureBox1
             // 
-            this.cbx_idiomaLibro.FormattingEnabled = true;
-            this.cbx_idiomaLibro.Location = new System.Drawing.Point(19, 118);
-            this.cbx_idiomaLibro.Name = "cbx_idiomaLibro";
-            this.cbx_idiomaLibro.Size = new System.Drawing.Size(139, 21);
-            this.cbx_idiomaLibro.TabIndex = 26;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 102);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Idioma:";
+            this.pictureBox1.Image = global::BiblioCaxial.Properties.Resources.TitleLibNvo2;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(415, 50);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // NewLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 435);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -355,14 +354,12 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -390,5 +387,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbx_idiomaLibro;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -29,6 +29,8 @@ namespace BiblioCaxial.Properties {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
         
         /// <summary>
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
@@ -55,36 +57,6 @@ namespace BiblioCaxial.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ALibro {
-            get {
-                object obj = ResourceManager.GetObject("ALibro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap CLibro {
-            get {
-                object obj = ResourceManager.GetObject("CLibro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ELibro {
-            get {
-                object obj = ResourceManager.GetObject("ELibro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -121,9 +93,9 @@ namespace BiblioCaxial.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ILibro {
+        internal static System.Drawing.Bitmap LogoBiblio {
             get {
-                object obj = ResourceManager.GetObject("ILibro", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoBiblio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -131,9 +103,39 @@ namespace BiblioCaxial.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TitleLibInfo {
+        internal static System.Drawing.Bitmap Portada {
             get {
-                object obj = ResourceManager.GetObject("TitleLibInfo", resourceCulture);
+                object obj = ResourceManager.GetObject("Portada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleLibEdit2 {
+            get {
+                object obj = ResourceManager.GetObject("TitleLibEdit2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleLibInfo2 {
+            get {
+                object obj = ResourceManager.GetObject("TitleLibInfo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleLibNvo2 {
+            get {
+                object obj = ResourceManager.GetObject("TitleLibNvo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

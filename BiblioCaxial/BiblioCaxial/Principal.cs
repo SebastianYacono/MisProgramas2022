@@ -22,6 +22,24 @@ namespace BiblioCaxial
             LlenarDgvCliente();
         }
 
+        #region Tab Bienvenidos
+        private void btn_Alq_Click(object sender, EventArgs e)
+        {
+            AlqPrincipal alqPrincipal = new AlqPrincipal();
+            alqPrincipal.ShowDialog();
+        }
+        private void btn_Ren_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btn_Dev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+
         #region Tab Clientes
         public void LlenarDgvCliente()//Rellena el dgv de cliente
         {
@@ -132,7 +150,7 @@ namespace BiblioCaxial
 
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT LIBROS.IdLibro, LIBROS.Titulo, AUTOR.Alias, GENERO.Genero, LIBROS.Descripcion, IDIOMA.Idioma, PROVEEDOR.Nombre, LIBROS.FechaIng, LIBROS.Disponible, LIBROS.Ubicacion, ESTADO.Estado FROM PROVEEDOR INNER JOIN (IDIOMA INNER JOIN (GENERO INNER JOIN (ESTADO INNER JOIN (AUTOR INNER JOIN LIBROS ON AUTOR.idAutor = LIBROS.idAutor) ON ESTADO.idEstado = LIBROS.idEstado) ON GENERO.idGenero = LIBROS.idGenero) ON IDIOMA.idIdioma = LIBROS.idIdioma) ON PROVEEDOR.idProveedor = LIBROS.idProveedor;");
+            datosConexion.Select("SELECT LIBROS.IdLibro, LIBROS.Titulo, AUTOR.Alias, GENERO.Genero, LIBROS.Descripcion, IDIOMA.Idioma, PROVEEDOR.Nombre, LIBROS.FechaIng, LIBROS.Disponible, LIBROS.Ubicacion, ESTADO.Estado FROM PROVEEDOR INNER JOIN (IDIOMA INNER JOIN (GENERO INNER JOIN (ESTADO INNER JOIN (AUTOR INNER JOIN LIBROS ON AUTOR.idAutor = LIBROS.idAutor) ON ESTADO.idEstado = LIBROS.idEstado) ON GENERO.idGenero = LIBROS.idGenero) ON IDIOMA.idIdioma = LIBROS.idIdioma) ON PROVEEDOR.idProveedor = LIBROS.idProveedor ORDER BY LIBROS.Titulo Asc;");
             while (datosConexion.reader.Read())
             {
                 List<object> CamposLibros = new List<object>();
@@ -187,6 +205,142 @@ namespace BiblioCaxial
 
             datosConexion.CerrarConexion();
         }
+        public void LlenarDgvLibDisp()//Rellena el dgv de libro
+        {
+            dgv_Libros.Rows.Clear();
+
+            DatosConexion datosConexion = new DatosConexion();
+
+            datosConexion.Select("SELECT LIBROS.IdLibro, LIBROS.Titulo, AUTOR.Alias, GENERO.Genero, LIBROS.Descripcion, IDIOMA.Idioma, PROVEEDOR.Nombre, LIBROS.FechaIng, LIBROS.Disponible, LIBROS.Ubicacion, ESTADO.Estado FROM PROVEEDOR INNER JOIN (IDIOMA INNER JOIN (GENERO INNER JOIN (ESTADO INNER JOIN (AUTOR INNER JOIN LIBROS ON AUTOR.idAutor = LIBROS.idAutor) ON ESTADO.idEstado = LIBROS.idEstado) ON GENERO.idGenero = LIBROS.idGenero) ON IDIOMA.idIdioma = LIBROS.idIdioma) ON PROVEEDOR.idProveedor = LIBROS.idProveedor WHERE LIBROS.Disponible LIKE true ORDER BY LIBROS.Titulo Asc;");
+            while (datosConexion.reader.Read())
+            {
+                List<object> CamposLibros = new List<object>();
+                if (!datosConexion.reader.IsDBNull(0))//id
+                {
+                    CamposLibros.Add(datosConexion.reader.GetInt32(0));
+                }
+                if (!datosConexion.reader.IsDBNull(1))//titulo
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(1));
+                }
+                if (!datosConexion.reader.IsDBNull(2))//autor
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(2));
+                }
+                if (!datosConexion.reader.IsDBNull(3))//genero
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(3));
+                }
+                if (!datosConexion.reader.IsDBNull(4))//descripcion
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(4));
+                }
+                if (!datosConexion.reader.IsDBNull(5))//idioma
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(5));
+                }
+                if (!datosConexion.reader.IsDBNull(6))//proveedor
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(6));
+                }
+                if (!datosConexion.reader.IsDBNull(7))//fechaIng
+                {
+                    CamposLibros.Add(datosConexion.reader.GetDateTime(7));
+                }
+                if (!datosConexion.reader.IsDBNull(8))//disp
+                {
+                    CamposLibros.Add(datosConexion.reader.GetBoolean(8));
+                }
+                if (!datosConexion.reader.IsDBNull(9))//ubicacion
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(9));
+                }
+                if (!datosConexion.reader.IsDBNull(10))//estado
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(10));
+                }
+
+                dgv_Libros.Rows.Add(CamposLibros.ToArray());
+
+            }
+
+            datosConexion.CerrarConexion();
+        }
+        public void LlenarDgvLibNDisp()//Rellena el dgv de libro
+        {
+            dgv_Libros.Rows.Clear();
+
+            DatosConexion datosConexion = new DatosConexion();
+
+            datosConexion.Select("SELECT LIBROS.IdLibro, LIBROS.Titulo, AUTOR.Alias, GENERO.Genero, LIBROS.Descripcion, IDIOMA.Idioma, PROVEEDOR.Nombre, LIBROS.FechaIng, LIBROS.Disponible, LIBROS.Ubicacion, ESTADO.Estado FROM PROVEEDOR INNER JOIN (IDIOMA INNER JOIN (GENERO INNER JOIN (ESTADO INNER JOIN (AUTOR INNER JOIN LIBROS ON AUTOR.idAutor = LIBROS.idAutor) ON ESTADO.idEstado = LIBROS.idEstado) ON GENERO.idGenero = LIBROS.idGenero) ON IDIOMA.idIdioma = LIBROS.idIdioma) ON PROVEEDOR.idProveedor = LIBROS.idProveedor WHERE LIBROS.Disponible LIKE false ORDER BY LIBROS.Titulo Asc;");
+            while (datosConexion.reader.Read())
+            {
+                List<object> CamposLibros = new List<object>();
+                if (!datosConexion.reader.IsDBNull(0))//id
+                {
+                    CamposLibros.Add(datosConexion.reader.GetInt32(0));
+                }
+                if (!datosConexion.reader.IsDBNull(1))//titulo
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(1));
+                }
+                if (!datosConexion.reader.IsDBNull(2))//autor
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(2));
+                }
+                if (!datosConexion.reader.IsDBNull(3))//genero
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(3));
+                }
+                if (!datosConexion.reader.IsDBNull(4))//descripcion
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(4));
+                }
+                if (!datosConexion.reader.IsDBNull(5))//idioma
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(5));
+                }
+                if (!datosConexion.reader.IsDBNull(6))//proveedor
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(6));
+                }
+                if (!datosConexion.reader.IsDBNull(7))//fechaIng
+                {
+                    CamposLibros.Add(datosConexion.reader.GetDateTime(7));
+                }
+                if (!datosConexion.reader.IsDBNull(8))//disp
+                {
+                    CamposLibros.Add(datosConexion.reader.GetBoolean(8));
+                }
+                if (!datosConexion.reader.IsDBNull(9))//ubicacion
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(9));
+                }
+                if (!datosConexion.reader.IsDBNull(10))//estado
+                {
+                    CamposLibros.Add(datosConexion.reader.GetString(10));
+                }
+
+                dgv_Libros.Rows.Add(CamposLibros.ToArray());
+
+            }
+
+            datosConexion.CerrarConexion();
+        }
+
+        private void rb_nDisp_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarDgvLibNDisp();
+        }
+        private void rb_disp_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarDgvLibDisp();
+        }
+        private void rb_All_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarDgvLibro();
+        }
+
         private void Btn_newLibro_Click(object sender, EventArgs e)//Comando para crear el libro.
         {
             NewLibro newLibro = new NewLibro(this);
@@ -309,7 +463,7 @@ namespace BiblioCaxial
 
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT AUTOR.idAutor, AUTOR.Apellido, AUTOR.Nombre, PAIS.Pais, GENERO.Genero, AUTOR.Alias FROM PAIS INNER JOIN (AUTOR INNER JOIN GENERO ON AUTOR.idGenero = GENERO.idGenero) ON PAIS.idPais = AUTOR.idPais;");
+            datosConexion.Select("SELECT AUTOR.idAutor, AUTOR.Apellido, AUTOR.Nombre, PAIS.Pais, GENERO.Genero, AUTOR.Alias FROM PAIS INNER JOIN (AUTOR INNER JOIN GENERO ON AUTOR.idGenero = GENERO.idGenero) ON PAIS.idPais = AUTOR.idPais ORDER BY AUTOR.Apellido Asc;");
             while (datosConexion.reader.Read())
             {
                 List<object> CamposAut = new List<object>();
@@ -405,7 +559,7 @@ namespace BiblioCaxial
 
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT * from PROVEEDOR");
+            datosConexion.Select("SELECT * from PROVEEDOR ORDER BY Nombre Asc");
             while (datosConexion.reader.Read())
             {
                 List<object> CamposPr = new List<object>();
@@ -497,6 +651,12 @@ namespace BiblioCaxial
         {
             Application.Exit();
         }
+
+
+
+
+
+
 
         #endregion
 

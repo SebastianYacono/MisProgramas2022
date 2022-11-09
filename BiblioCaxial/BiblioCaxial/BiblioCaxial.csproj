@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios Alquiler\AlqNvo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Alquiler\AlqNvo.Designer.cs">
+      <DependentUpon>AlqNvo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios Alquiler\AlqPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Alquiler\AlqPrincipal.Designer.cs">
+      <DependentUpon>AlqPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatosConexion.cs" />
     <Compile Include="Formularios Libros\InfLibro.cs">
       <SubType>Form</SubType>
@@ -115,6 +127,12 @@
     <Compile Include="Formularios Libros\UpdateLibro.Designer.cs">
       <DependentUpon>UpdateLibro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios Alquiler\AlqNvo.resx">
+      <DependentUpon>AlqNvo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Alquiler\AlqPrincipal.resx">
+      <DependentUpon>AlqPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios Autor\NewAutor.resx">
       <DependentUpon>NewAutor.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,13 +166,18 @@
     <EmbeddedResource Include="Formularios Libros\UpdateLibro.resx">
       <DependentUpon>UpdateLibro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.cs" />
-    <Compile Include="Properties\Resources.designer.cs">
-      <DependentUpon>Resources.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -166,8 +189,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BCaixal.mdb" />
-    <None Include="Resources\TitleLibInfo.png" />
+    <None Include="Resources\TitleLibNvo2.png" />
+    <None Include="Resources\TitleLibInfo2.png" />
+    <None Include="Resources\TitleLibEdit2.png" />
+    <None Include="Resources\Portada.png" />
+    <None Include="Resources\LogoBiblio.png" />
     <None Include="Resources\IconRen.png" />
     <None Include="Resources\IconDev.png" />
     <None Include="Resources\IconAlq.png" />

@@ -32,6 +32,10 @@
             this.SalirApp = new System.Windows.Forms.Button();
             this.Control1 = new System.Windows.Forms.TabControl();
             this.TabWelc = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Dev = new System.Windows.Forms.Button();
+            this.btn_Ren = new System.Windows.Forms.Button();
+            this.btn_Alq = new System.Windows.Forms.Button();
             this.TabClientes = new System.Windows.Forms.TabPage();
             this.Btn_deleteClient = new System.Windows.Forms.Button();
             this.Btn_editClient = new System.Windows.Forms.Button();
@@ -45,6 +49,9 @@
             this.Teléfono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabLibros = new System.Windows.Forms.TabPage();
+            this.rb_nDisp = new System.Windows.Forms.RadioButton();
+            this.rb_disp = new System.Windows.Forms.RadioButton();
+            this.rb_All = new System.Windows.Forms.RadioButton();
             this.btn_InfoLibro = new System.Windows.Forms.Button();
             this.Btn_deleteLibro = new System.Windows.Forms.Button();
             this.Btn_editLibro = new System.Windows.Forms.Button();
@@ -86,6 +93,7 @@
             this.lbl_FecHor = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Control1.SuspendLayout();
+            this.TabWelc.SuspendLayout();
             this.TabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Client)).BeginInit();
             this.TabLibros.SuspendLayout();
@@ -124,12 +132,57 @@
             // 
             // TabWelc
             // 
+            this.TabWelc.Controls.Add(this.label1);
+            this.TabWelc.Controls.Add(this.btn_Dev);
+            this.TabWelc.Controls.Add(this.btn_Ren);
+            this.TabWelc.Controls.Add(this.btn_Alq);
             this.TabWelc.Location = new System.Drawing.Point(4, 22);
             this.TabWelc.Name = "TabWelc";
             this.TabWelc.Size = new System.Drawing.Size(575, 233);
             this.TabWelc.TabIndex = 3;
             this.TabWelc.Text = "Bienvenidos";
             this.TabWelc.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(40, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(499, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bienvenido a la Biblioteca del Instituto Obispo Caixal";
+            // 
+            // btn_Dev
+            // 
+            this.btn_Dev.Image = global::BiblioCaxial.Properties.Resources.IconDev;
+            this.btn_Dev.Location = new System.Drawing.Point(385, 41);
+            this.btn_Dev.Name = "btn_Dev";
+            this.btn_Dev.Size = new System.Drawing.Size(150, 150);
+            this.btn_Dev.TabIndex = 2;
+            this.btn_Dev.UseVisualStyleBackColor = true;
+            this.btn_Dev.Click += new System.EventHandler(this.btn_Dev_Click);
+            // 
+            // btn_Ren
+            // 
+            this.btn_Ren.Image = global::BiblioCaxial.Properties.Resources.IconRen;
+            this.btn_Ren.Location = new System.Drawing.Point(214, 41);
+            this.btn_Ren.Name = "btn_Ren";
+            this.btn_Ren.Size = new System.Drawing.Size(150, 150);
+            this.btn_Ren.TabIndex = 1;
+            this.btn_Ren.UseVisualStyleBackColor = true;
+            this.btn_Ren.Click += new System.EventHandler(this.btn_Ren_Click);
+            // 
+            // btn_Alq
+            // 
+            this.btn_Alq.Image = global::BiblioCaxial.Properties.Resources.IconAlq;
+            this.btn_Alq.Location = new System.Drawing.Point(43, 40);
+            this.btn_Alq.Name = "btn_Alq";
+            this.btn_Alq.Size = new System.Drawing.Size(150, 150);
+            this.btn_Alq.TabIndex = 0;
+            this.btn_Alq.UseVisualStyleBackColor = true;
+            this.btn_Alq.Click += new System.EventHandler(this.btn_Alq_Click);
             // 
             // TabClientes
             // 
@@ -247,6 +300,9 @@
             // 
             // TabLibros
             // 
+            this.TabLibros.Controls.Add(this.rb_nDisp);
+            this.TabLibros.Controls.Add(this.rb_disp);
+            this.TabLibros.Controls.Add(this.rb_All);
             this.TabLibros.Controls.Add(this.btn_InfoLibro);
             this.TabLibros.Controls.Add(this.Btn_deleteLibro);
             this.TabLibros.Controls.Add(this.Btn_editLibro);
@@ -259,6 +315,43 @@
             this.TabLibros.TabIndex = 1;
             this.TabLibros.Text = "Libros";
             this.TabLibros.UseVisualStyleBackColor = true;
+            // 
+            // rb_nDisp
+            // 
+            this.rb_nDisp.AutoSize = true;
+            this.rb_nDisp.Location = new System.Drawing.Point(484, 204);
+            this.rb_nDisp.Name = "rb_nDisp";
+            this.rb_nDisp.Size = new System.Drawing.Size(89, 17);
+            this.rb_nDisp.TabIndex = 11;
+            this.rb_nDisp.TabStop = true;
+            this.rb_nDisp.Text = "No disponible";
+            this.rb_nDisp.UseVisualStyleBackColor = true;
+            this.rb_nDisp.CheckedChanged += new System.EventHandler(this.rb_nDisp_CheckedChanged);
+            // 
+            // rb_disp
+            // 
+            this.rb_disp.AutoSize = true;
+            this.rb_disp.Location = new System.Drawing.Point(408, 204);
+            this.rb_disp.Name = "rb_disp";
+            this.rb_disp.Size = new System.Drawing.Size(74, 17);
+            this.rb_disp.TabIndex = 10;
+            this.rb_disp.TabStop = true;
+            this.rb_disp.Text = "Disponible";
+            this.rb_disp.UseVisualStyleBackColor = true;
+            this.rb_disp.CheckedChanged += new System.EventHandler(this.rb_disp_CheckedChanged);
+            // 
+            // rb_All
+            // 
+            this.rb_All.AutoSize = true;
+            this.rb_All.Checked = true;
+            this.rb_All.Location = new System.Drawing.Point(355, 204);
+            this.rb_All.Name = "rb_All";
+            this.rb_All.Size = new System.Drawing.Size(50, 17);
+            this.rb_All.TabIndex = 9;
+            this.rb_All.TabStop = true;
+            this.rb_All.Text = "Todo";
+            this.rb_All.UseVisualStyleBackColor = true;
+            this.rb_All.CheckedChanged += new System.EventHandler(this.rb_All_CheckedChanged);
             // 
             // btn_InfoLibro
             // 
@@ -651,9 +744,12 @@
             this.Text = "Principal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Control1.ResumeLayout(false);
+            this.TabWelc.ResumeLayout(false);
+            this.TabWelc.PerformLayout();
             this.TabClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Client)).EndInit();
             this.TabLibros.ResumeLayout(false);
+            this.TabLibros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Libros)).EndInit();
             this.TabAutor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Autor)).EndInit();
@@ -721,5 +817,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ubicación;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.Button btn_InfoLibro;
+        private System.Windows.Forms.Button btn_Dev;
+        private System.Windows.Forms.Button btn_Ren;
+        private System.Windows.Forms.Button btn_Alq;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rb_nDisp;
+        private System.Windows.Forms.RadioButton rb_disp;
+        private System.Windows.Forms.RadioButton rb_All;
     }
 }

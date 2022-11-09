@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbx_idiomaLibro = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -49,19 +48,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_CloseLibro = new System.Windows.Forms.Button();
             this.tb_tituloLibro = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(88, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(253, 24);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "INFORMACIÓN DE LIBRO";
             // 
             // groupBox1
             // 
@@ -119,6 +109,7 @@
             // 
             // tb_ubi
             // 
+            this.tb_ubi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tb_ubi.Enabled = false;
             this.tb_ubi.Location = new System.Drawing.Point(163, 118);
             this.tb_ubi.Name = "tb_ubi";
@@ -127,6 +118,7 @@
             // 
             // rtb_descLibro
             // 
+            this.rtb_descLibro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rtb_descLibro.Enabled = false;
             this.rtb_descLibro.Location = new System.Drawing.Point(19, 199);
             this.rtb_descLibro.Name = "rtb_descLibro";
@@ -145,6 +137,7 @@
             // 
             // dtp_fecIngLibro
             // 
+            this.dtp_fecIngLibro.CalendarMonthBackground = System.Drawing.SystemColors.ButtonHighlight;
             this.dtp_fecIngLibro.Enabled = false;
             this.dtp_fecIngLibro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecIngLibro.Location = new System.Drawing.Point(262, 159);
@@ -166,6 +159,7 @@
             // 
             // cbx_autorLibro
             // 
+            this.cbx_autorLibro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cbx_autorLibro.Enabled = false;
             this.cbx_autorLibro.FormattingEnabled = true;
             this.cbx_autorLibro.Location = new System.Drawing.Point(19, 78);
@@ -257,6 +251,7 @@
             // 
             // tb_tituloLibro
             // 
+            this.tb_tituloLibro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tb_tituloLibro.Enabled = false;
             this.tb_tituloLibro.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tb_tituloLibro.Location = new System.Drawing.Point(19, 39);
@@ -264,12 +259,21 @@
             this.tb_tituloLibro.Size = new System.Drawing.Size(376, 20);
             this.tb_tituloLibro.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BiblioCaxial.Properties.Resources.TitleLibInfo2;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(415, 50);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // InfLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 434);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -279,14 +283,12 @@
             this.Text = "InfLibro";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbx_idiomaLibro;
         private System.Windows.Forms.Label label12;
@@ -307,5 +309,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Btn_CloseLibro;
         private System.Windows.Forms.TextBox tb_tituloLibro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

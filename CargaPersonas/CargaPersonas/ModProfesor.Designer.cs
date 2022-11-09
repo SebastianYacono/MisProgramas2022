@@ -170,6 +170,7 @@
             // 
             // cbx_Loc
             // 
+            this.cbx_Loc.Enabled = false;
             this.cbx_Loc.FormattingEnabled = true;
             this.cbx_Loc.Location = new System.Drawing.Point(190, 173);
             this.cbx_Loc.Name = "cbx_Loc";
@@ -183,6 +184,7 @@
             this.cbx_Prov.Name = "cbx_Prov";
             this.cbx_Prov.Size = new System.Drawing.Size(162, 21);
             this.cbx_Prov.TabIndex = 14;
+            this.cbx_Prov.SelectionChangeCommitted += new System.EventHandler(this.cbx_Prov_SelectionChangeCommitted);
             // 
             // tb_Mail
             // 

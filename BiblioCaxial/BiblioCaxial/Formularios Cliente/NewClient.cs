@@ -30,12 +30,13 @@ namespace BiblioCaxial
             decimal telefono = Convert.ToDecimal(tb_telClient.Text);
             string mail = tb_mailClient.Text;
             int idPen = 1;
+            string alias = tb_ApellClient.Text + ", " + tb_nombClient.Text;
 
             idBarrio++;
 
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Insert("INSERT INTO CLIENTE(Apellido,Nombre,Direccion,idBarrio,Telefono,Email,idPenalizacion) VALUES('" + apellido + "','" + nombre + "','" + direccion + "'," + idBarrio + "," + telefono + ",'" + mail + "'," + idPen + ");");
+            datosConexion.Insert("INSERT INTO CLIENTE(Apellido,Nombre,Direccion,idBarrio,Telefono,Email,idPenalizacion, AliasCl) VALUES('" + apellido + "','" + nombre + "','" + direccion + "'," + idBarrio + "," + telefono + ",'" + mail + "'," + idPen + ", '" + alias + ");");
 
             MessageBox.Show("El cliente ha sido agregado exitosamente", "Añadir cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

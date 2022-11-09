@@ -32,6 +32,9 @@
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbx_Turno = new System.Windows.Forms.ComboBox();
+            this.cbx_Div = new System.Windows.Forms.ComboBox();
+            this.cbx_Anio = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,9 +57,6 @@
             this.tb_Apell = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbx_Turno = new System.Windows.Forms.ComboBox();
-            this.cbx_Div = new System.Windows.Forms.ComboBox();
-            this.cbx_Anio = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +122,48 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // cbx_Turno
+            // 
+            this.cbx_Turno.FormattingEnabled = true;
+            this.cbx_Turno.Items.AddRange(new object[] {
+            "Mañana",
+            "Tarde",
+            "Noche"});
+            this.cbx_Turno.Location = new System.Drawing.Point(244, 261);
+            this.cbx_Turno.Name = "cbx_Turno";
+            this.cbx_Turno.Size = new System.Drawing.Size(108, 21);
+            this.cbx_Turno.TabIndex = 29;
+            // 
+            // cbx_Div
+            // 
+            this.cbx_Div.FormattingEnabled = true;
+            this.cbx_Div.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"});
+            this.cbx_Div.Location = new System.Drawing.Point(131, 261);
+            this.cbx_Div.Name = "cbx_Div";
+            this.cbx_Div.Size = new System.Drawing.Size(108, 21);
+            this.cbx_Div.TabIndex = 28;
+            // 
+            // cbx_Anio
+            // 
+            this.cbx_Anio.FormattingEnabled = true;
+            this.cbx_Anio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cbx_Anio.Location = new System.Drawing.Point(19, 261);
+            this.cbx_Anio.Name = "cbx_Anio";
+            this.cbx_Anio.Size = new System.Drawing.Size(108, 21);
+            this.cbx_Anio.TabIndex = 27;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -169,6 +211,7 @@
             // 
             // cbx_Loc
             // 
+            this.cbx_Loc.Enabled = false;
             this.cbx_Loc.FormattingEnabled = true;
             this.cbx_Loc.Location = new System.Drawing.Point(190, 173);
             this.cbx_Loc.Name = "cbx_Loc";
@@ -182,6 +225,7 @@
             this.cbx_Prov.Name = "cbx_Prov";
             this.cbx_Prov.Size = new System.Drawing.Size(162, 21);
             this.cbx_Prov.TabIndex = 14;
+            this.cbx_Prov.SelectionChangeCommitted += new System.EventHandler(this.cbx_Prov_SelectionChangeCommitted);
             // 
             // tb_Mail
             // 
@@ -303,48 +347,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(374, 68);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // cbx_Turno
-            // 
-            this.cbx_Turno.FormattingEnabled = true;
-            this.cbx_Turno.Items.AddRange(new object[] {
-            "Mañana",
-            "Tarde",
-            "Noche"});
-            this.cbx_Turno.Location = new System.Drawing.Point(244, 261);
-            this.cbx_Turno.Name = "cbx_Turno";
-            this.cbx_Turno.Size = new System.Drawing.Size(108, 21);
-            this.cbx_Turno.TabIndex = 29;
-            // 
-            // cbx_Div
-            // 
-            this.cbx_Div.FormattingEnabled = true;
-            this.cbx_Div.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F"});
-            this.cbx_Div.Location = new System.Drawing.Point(131, 261);
-            this.cbx_Div.Name = "cbx_Div";
-            this.cbx_Div.Size = new System.Drawing.Size(108, 21);
-            this.cbx_Div.TabIndex = 28;
-            // 
-            // cbx_Anio
-            // 
-            this.cbx_Anio.FormattingEnabled = true;
-            this.cbx_Anio.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.cbx_Anio.Location = new System.Drawing.Point(19, 261);
-            this.cbx_Anio.Name = "cbx_Anio";
-            this.cbx_Anio.Size = new System.Drawing.Size(108, 21);
-            this.cbx_Anio.TabIndex = 27;
             // 
             // ModAlumno
             // 
