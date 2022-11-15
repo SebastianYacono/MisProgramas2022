@@ -70,6 +70,7 @@
             this.Btn_deleteProf.TabIndex = 3;
             this.Btn_deleteProf.Text = "Eliminar";
             this.Btn_deleteProf.UseVisualStyleBackColor = true;
+            this.Btn_deleteProf.Click += new System.EventHandler(this.Btn_deleteProf_Click);
             // 
             // Btn_editProf
             // 
@@ -101,6 +102,8 @@
             this.dgv_Prof.Location = new System.Drawing.Point(6, 9);
             this.dgv_Prof.Name = "dgv_Prof";
             this.dgv_Prof.ReadOnly = true;
+            this.dgv_Prof.RowHeadersVisible = false;
+            this.dgv_Prof.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Prof.Size = new System.Drawing.Size(563, 186);
             this.dgv_Prof.TabIndex = 0;
             // 
@@ -125,6 +128,7 @@
             this.Btn_deleteAlumn.TabIndex = 7;
             this.Btn_deleteAlumn.Text = "Eliminar";
             this.Btn_deleteAlumn.UseVisualStyleBackColor = true;
+            this.Btn_deleteAlumn.Click += new System.EventHandler(this.Btn_deleteAlumn_Click);
             // 
             // Btn_editAlumn
             // 
@@ -154,8 +158,11 @@
             this.dgv_Alumn.AllowUserToResizeRows = false;
             this.dgv_Alumn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Alumn.Location = new System.Drawing.Point(6, 9);
+            this.dgv_Alumn.MultiSelect = false;
             this.dgv_Alumn.Name = "dgv_Alumn";
             this.dgv_Alumn.ReadOnly = true;
+            this.dgv_Alumn.RowHeadersVisible = false;
+            this.dgv_Alumn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Alumn.Size = new System.Drawing.Size(563, 186);
             this.dgv_Alumn.TabIndex = 4;
             // 
@@ -189,6 +196,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal";
             this.TabProfes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Prof)).EndInit();

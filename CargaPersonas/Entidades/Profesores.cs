@@ -14,10 +14,22 @@ namespace Entidades
         #endregion
 
         #region Constructor
-        public Profesores(int id, string nomb, string apell, string dom, long dni, DateTime fechaNac, long tel, string mail, int idProv, int idLoc, string cLegajo, int cCantHs) : base(id, nomb, apell, dom, dni, fechaNac, tel, mail, idProv, idLoc)
+        public Profesores(int id, string nomb, string apell, string dom, long dni, DateTime fechaNac, decimal tel, string mail, int idProv, int idLoc, string cLegajo, int cCantHs) : base(id, nomb, apell, dom, dni, fechaNac, tel, mail, idProv, idLoc)
         {
             legajo = cLegajo;
             cantHs = cCantHs;
+        }
+
+        public Profesores(string nomb, string apell, string dom, long dni, DateTime fechaNac, decimal tel, string mail, int idProv, int idLoc, string cLegajo, int cCantHs) : base(nomb, apell, dom, dni, fechaNac, tel, mail, idProv, idLoc)
+        {
+            legajo = cLegajo;
+            cantHs = cCantHs;
+        }
+
+        public Profesores()
+        {
+            legajo = "";
+            cantHs = 0;
         }
         #endregion
 

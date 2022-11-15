@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbx_genUAutor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,19 +41,10 @@
             this.Btn_EditAut = new System.Windows.Forms.Button();
             this.tb_apellUAut = new System.Windows.Forms.TextBox();
             this.tb_nombUAut = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(66, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 24);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "EDITAR AUTOR";
             // 
             // groupBox1
             // 
@@ -70,7 +60,7 @@
             this.groupBox1.Controls.Add(this.Btn_EditAut);
             this.groupBox1.Controls.Add(this.tb_apellUAut);
             this.groupBox1.Controls.Add(this.tb_nombUAut);
-            this.groupBox1.Location = new System.Drawing.Point(11, 62);
+            this.groupBox1.Location = new System.Drawing.Point(11, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(276, 283);
             this.groupBox1.TabIndex = 11;
@@ -82,7 +72,7 @@
             this.cbx_genUAutor.Location = new System.Drawing.Point(19, 216);
             this.cbx_genUAutor.Name = "cbx_genUAutor";
             this.cbx_genUAutor.Size = new System.Drawing.Size(236, 21);
-            this.cbx_genUAutor.TabIndex = 11;
+            this.cbx_genUAutor.TabIndex = 3;
             // 
             // label6
             // 
@@ -99,7 +89,7 @@
             this.cbx_paisUAut.Location = new System.Drawing.Point(19, 171);
             this.cbx_paisUAut.Name = "cbx_paisUAut";
             this.cbx_paisUAut.Size = new System.Drawing.Size(236, 21);
-            this.cbx_paisUAut.TabIndex = 9;
+            this.cbx_paisUAut.TabIndex = 2;
             // 
             // label4
             // 
@@ -162,7 +152,7 @@
             this.Btn_EditAut.Location = new System.Drawing.Point(99, 251);
             this.Btn_EditAut.Name = "Btn_EditAut";
             this.Btn_EditAut.Size = new System.Drawing.Size(75, 23);
-            this.Btn_EditAut.TabIndex = 3;
+            this.Btn_EditAut.TabIndex = 4;
             this.Btn_EditAut.Text = "Editar";
             this.Btn_EditAut.UseVisualStyleBackColor = true;
             this.Btn_EditAut.Click += new System.EventHandler(this.Btn_EditAut_Click);
@@ -181,12 +171,22 @@
             this.tb_nombUAut.Size = new System.Drawing.Size(236, 20);
             this.tb_nombUAut.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BiblioCaxial.Properties.Resources.TitleAutEdit;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(276, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // UpdateAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 356);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -197,14 +197,12 @@
             this.Text = "Editar autor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_idAu;
@@ -218,5 +216,6 @@
         private System.Windows.Forms.ComboBox cbx_paisUAut;
         private System.Windows.Forms.ComboBox cbx_genUAutor;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

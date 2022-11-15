@@ -43,5 +43,38 @@ namespace Conexion
 
             return lista;
         }
+        public List<Localidad> ObtenerLoc()
+        {
+            List<Localidad> lista = new List<Localidad>();
+            string orden = "SELECT idLoc, Localidad From LOCALIDAD";
+            OleDbCommand cmd = new OleDbCommand(orden, conexion);
+            OleDbDataReader dr;
+            try
+            {
+                AbrirConexion();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Localidad loc = new Localidad();
+                    //loc.p_idLoc = dr.GetInt32(0);
+                    loc.p_idLoc = Convert.ToInt32(dr["idLoc"]);
+                    //loc.p_localidad = dr.GetString(1);
+                    loc.p_localidad = dr["Localidad"].ToString();
+                    lista.Add(loc);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al listar Localidad", e);
+            }
+            finally
+            {
+                CerrarConexion();
+                cmd.Dispose();
+            }
+
+            return lista;
+        }
+
     }
 }

@@ -15,5 +15,10 @@ namespace Negocios
         {
             return ObjDatosLocalidad.ObtenerLoc(idProvincia);
         }
+
+        public List<Localidad> ObtenerLoc()
+        {
+            return ObjDatosLocalidad.ObtenerLoc();
+        }
     }
 }

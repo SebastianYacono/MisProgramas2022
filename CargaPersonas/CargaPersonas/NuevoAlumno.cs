@@ -24,22 +24,50 @@ namespace CargaPersonas
             InitializeComponent();
             principal = Alumno;
             LlenarCbxProv();
+            cbx_Anio.SelectedIndex = 0;
+            cbx_Div.SelectedIndex = 0;
+            cbx_Turno.SelectedIndex = 0;
         }
+
+        #region Botones del formulario
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            int nGrabados = -1;
-
-            alumnos = new Alumnos(tb_Apell.Text, tb_Nomb.Text, tb_Dir.Text, Convert.ToInt32(tb_Dni.Text), DateTime.Parse(dtp_fecNac.Text), Convert.ToInt32(tb_Tel.Text), tb_Mail.Text, Convert.ToInt32(cbx_Prov.SelectedIndex), Convert.ToInt32(cbx_Loc.SelectedIndex), Convert.ToInt32(cbx_Anio.Text), cbx_Div.Text, cbx_Turno.Text);
-
-            nGrabados = negAlumno.ABM_Alumnos("INSERT", alumnos);
-
-            if (nGrabados == -1)
+            if (tb_Apell.Text != "" && tb_Nomb.Text != "" && tb_Dni.Text != "" && tb_Dir.Text != "" && cbx_Prov.Text != "" && cbx_Loc.Text != "" && tb_Tel.Text != "" && tb_Mail.Text != "" && cbx_Anio.Text != "" && cbx_Div.Text != "" && cbx_Turno.Text != "")
             {
-                MessageBox.Show("No se pudo grabar el Alumno en el sistema");
+                if (negAlumno.valTel(tb_Tel.Text) == true)
+                {
+                    if (negAlumno.valDNI(tb_Dni.Text) == true)
+                    {
+                        int nGrabados = -1;
+
+                        alumnos = new Alumnos(tb_Nomb.Text, tb_Apell.Text, tb_Dir.Text, Convert.ToInt64(tb_Dni.Text), DateTime.Parse(dtp_fecNac.Text), Convert.ToInt64(tb_Tel.Text), tb_Mail.Text, Convert.ToInt32(cbx_Prov.SelectedValue), Convert.ToInt32(cbx_Loc.SelectedValue), Convert.ToInt32(cbx_Anio.Text), cbx_Div.Text, cbx_Turno.Text);
+
+                        nGrabados = negAlumno.ABM_Alumnos("INSERT", alumnos);
+
+                        if (nGrabados == -1)
+                        {
+                            MessageBox.Show("No se pudo grabar el Alumno en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            principal.LlenarDgvAlumnos();
+                            MessageBox.Show("El alumno fue agregado correctamente.", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El DNI tiene que contar con 7 u 8 dígitos numéricos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El teléfono debe estar compuesto por Código de área sin 0 y teléfono sin 15. Ej.: 3514517225", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                principal.LlenarDgvAlumnos();
+                MessageBox.Show("Todos los campos deben estar completos para continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_Cerrar_Click(object sender, EventArgs e)
@@ -50,8 +78,9 @@ namespace CargaPersonas
         {
             limpiarForm();
         }
+        #endregion
 
-
+        #region Funciones del formulario
         public void limpiarForm()
         {
             tb_Apell.Clear();
@@ -80,5 +109,6 @@ namespace CargaPersonas
             cbx_Loc.DisplayMember = "p_localidad";
             cbx_Loc.ValueMember = "p_idLoc";
         }
+        #endregion
     }
 }

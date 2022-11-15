@@ -17,7 +17,7 @@ namespace Conexion
             string orden = string.Empty;
 
             if (accion == "INSERT")
-                orden = "INSERT into ALUMNO (Nombre, Apellido, Domicilio, DNI, FechaNac, Telefono, Email, idProv, idLoc, AnioCurs, Division, Turno) VALUES ('" + ObjAlumno.p_nomb + "', '" + ObjAlumno.p_apell + "', '" + ObjAlumno.p_dom + "', " + ObjAlumno.p_dni + ", '" + ObjAlumno.p_fechaNac + "', " + ObjAlumno.p_tel + ", '" + ObjAlumno.p_mail + "', " + ObjAlumno.p_idProv + ", " + ObjAlumno.p_idLoc + ", " + ObjAlumno.p_AnioLect + ", '" + ObjAlumno.p_div + "', '" + ObjAlumno.p_turno +");";
+                orden = "INSERT INTO ALUMNO (Nombre, Apellido, Domicilio, DNI, FechaNac, Telefono, Email, idProv, idLoc, AnioCurs, Division, Turno) VALUES ('" + ObjAlumno.p_nomb + "', '" + ObjAlumno.p_apell + "', '" + ObjAlumno.p_dom + "', " + ObjAlumno.p_dni + ", '" + ObjAlumno.p_fechaNac + "', " + ObjAlumno.p_tel + ", '" + ObjAlumno.p_mail + "', " + ObjAlumno.p_idProv + ", " + ObjAlumno.p_idLoc + ", " + ObjAlumno.p_AnioLect + ", '" + ObjAlumno.p_div + "', '" + ObjAlumno.p_turno +"');";
             if (accion == "DELETE")
                 orden = "DELETE FROM ALUMNO WHERE(idPersona = " + ObjAlumno.p_id + ")";
             if (accion == "UPDATE")
@@ -47,9 +47,9 @@ namespace Conexion
             string orden = string.Empty;
 
             if (cual != "SELECT")
-                orden = "SELECT * FROM ALUMNO WHERE idPersona = " + int.Parse(cual) + ";";
+                orden = "SELECT ALUMNO.IdPersona, ALUMNO.Apellido, ALUMNO.Nombre, ALUMNO.Domicilio, ALUMNO.DNI, ALUMNO.FechaNac, ALUMNO.Telefono, ALUMNO.Email, PROVINCIA.Provincia, LOCALIDAD.Localidad, ALUMNO.AnioCurs, ALUMNO.Division, ALUMNO.Turno, ALUMNO.idProv, ALUMNO.idLoc FROM PROVINCIA INNER JOIN (LOCALIDAD INNER JOIN ALUMNO ON LOCALIDAD.idLoc = ALUMNO.idLoc) ON (PROVINCIA.idProv = LOCALIDAD.idProv) WHERE idPersona = " + int.Parse(cual) + ";";
             else
-                orden = "SELECT * FROM ALUMNO;";
+                orden = "SELECT ALUMNO.IdPersona, ALUMNO.Apellido, ALUMNO.Nombre, ALUMNO.Domicilio, ALUMNO.DNI, ALUMNO.FechaNac, ALUMNO.Telefono, ALUMNO.Email, PROVINCIA.Provincia, LOCALIDAD.Localidad, ALUMNO.AnioCurs, ALUMNO.Division, ALUMNO.Turno, ALUMNO.idProv, ALUMNO.idLoc FROM PROVINCIA INNER JOIN (LOCALIDAD INNER JOIN ALUMNO ON LOCALIDAD.idLoc = ALUMNO.idLoc) ON (PROVINCIA.idProv = LOCALIDAD.idProv);";
 
             OleDbCommand cmd = new OleDbCommand(orden, conexion);
             DataSet ds = new DataSet();

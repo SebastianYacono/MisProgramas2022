@@ -56,49 +56,50 @@ namespace BiblioCaxial
             rtb_descLibro.Text = desc;
             cbx_idiomaLibro.Text = idioma;
             cbx_provLibro.Text = prov;
-            dtp_fecIngLibro.Text = fecIng;
+            dtp_fecIngLibro.Value = DateTime.Parse(fecIng);
             tb_ubi.Text = ubi;
             cbx_estLibro.Text = estado;
             rb_Yes.Checked = true;
             rb_No.Checked = false;
-            
         }
+
         #region Métodos de los botones
         private void Btn_EditLibro_Click(object sender, EventArgs e)
         {
-            int idAutor = Convert.ToInt32(cbx_autorLibro.SelectedIndex);
-            int idGenero = Convert.ToInt32(cbx_generoLibro.SelectedIndex);
-            int idIdioma = Convert.ToInt32(cbx_idiomaLibro.SelectedIndex);
-            int idProv = Convert.ToInt32(cbx_provLibro.SelectedIndex);
-            int idEstado = Convert.ToInt32(cbx_estLibro.SelectedIndex);
-
-            idAutor++;
-            idGenero++;
-            idIdioma++;
-            idProv++;
-            idEstado++;
-
-            bool disp = true;
-
-            DateTime fecIngreso = dtp_fecIngLibro.Value;
-
-            if (rb_Yes.Checked)
+            if (tb_tituloLibro.Text != "" && tb_ubi.Text != "" && rtb_descLibro.Text != "" && cbx_autorLibro.Text != "" && cbx_estLibro.Text != "" && cbx_generoLibro.Text != "" && cbx_idiomaLibro.Text != "" && cbx_provLibro.Text != "")
             {
-                disp = true;
+                int idAutor = Convert.ToInt32(cbx_autorLibro.SelectedValue);
+                int idGenero = Convert.ToInt32(cbx_generoLibro.SelectedValue);
+                int idIdioma = Convert.ToInt32(cbx_idiomaLibro.SelectedValue);
+                int idProv = Convert.ToInt32(cbx_provLibro.SelectedValue);
+                int idEstado = Convert.ToInt32(cbx_estLibro.SelectedValue);
+
+                bool disp = true;
+
+                DateTime fecIngreso = dtp_fecIngLibro.Value;
+
+                if (rb_Yes.Checked)
+                {
+                    disp = true;
+                }
+                if (rb_No.Checked)
+                {
+                    disp = false;
+                }
+
+                DatosConexion datosConexion = new DatosConexion();
+
+                datosConexion.Update("UPDATE LIBROS SET Titulo = '" + tb_tituloLibro.Text + "', idGenero = " + idGenero + ", idAutor = " + idAutor + ", Descripcion = '" + rtb_descLibro.Text + "', idProveedor = " + idProv + ", FechaIng = '" + fecIngreso + "', Disponible = " + disp + ", idIdioma = " + idIdioma + ", Ubicacion = '" + tb_ubi.Text + "', idEstado = " + idEstado + " WHERE idLibro = " + id);
+                Thread.Sleep(1000);
+                Agregar();
+
+                MessageBox.Show("El libro ha sido cambiado exitosamente", "Editar libro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
-            if (rb_No.Checked)
+            else
             {
-                disp = false;
+                MessageBox.Show("Debes completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            DatosConexion datosConexion = new DatosConexion();
-
-            datosConexion.Update("UPDATE LIBROS SET Titulo = '" + tb_tituloLibro.Text + "', idGenero = " + idGenero + ", idAutor = " + idAutor + ", Descripcion = '" + rtb_descLibro.Text + "', idProveedor = " + idProv + ", FechaIng = '" + fecIngreso + "', Disponible = " + disp + ", idIdioma = " + idIdioma + ", Ubicacion = '" + tb_ubi.Text + "', idEstado = " + idEstado + " WHERE idLibro = " + id);
-            Thread.Sleep(1000);
-            Agregar();
-
-            MessageBox.Show("El libro ha sido cambiado exitosamente", "Editar libro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
         }
         private void Btn_CloseLibro_Click(object sender, EventArgs e)
         {
@@ -115,110 +116,55 @@ namespace BiblioCaxial
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT AUTOR.idAutor, AUTOR.Alias FROM AUTOR;");
+            datosConexion.SelectDT("SELECT AUTOR.idAutor, AUTOR.Alias FROM AUTOR;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposAut = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposAut.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposAut.Add(datosConexion.reader.GetString(1));
-                }
+            cbx_autorLibro.DataSource = datosConexion.dt;
+            cbx_autorLibro.DisplayMember = "Alias";
+            cbx_autorLibro.ValueMember = "idAutor";
 
-                cbx_autorLibro.Items.Add(datosConexion.reader.GetString(1));
-            }
         }
         private void comboBoxGen()
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT * FROM GENERO;");
+            datosConexion.SelectDT("SELECT * FROM GENERO;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposAut = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposAut.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposAut.Add(datosConexion.reader.GetString(1));
-                }
+            cbx_generoLibro.DataSource = datosConexion.dt;
+            cbx_generoLibro.DisplayMember = "Genero";
+            cbx_generoLibro.ValueMember = "idGenero";
 
-                cbx_generoLibro.Items.Add(datosConexion.reader.GetString(1));
-            }
         }
         private void comboBoxIdioma()
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT * FROM IDIOMA;");
+            datosConexion.SelectDT("SELECT * FROM IDIOMA;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposAut = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposAut.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposAut.Add(datosConexion.reader.GetString(1));
-                }
-
-                cbx_idiomaLibro.Items.Add(datosConexion.reader.GetString(1));
-            }
+            cbx_idiomaLibro.DataSource = datosConexion.dt;
+            cbx_idiomaLibro.DisplayMember = "Idioma";
+            cbx_idiomaLibro.ValueMember = "idIdioma";
         }
         private void comboBoxEstado()
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT * FROM ESTADO;");
+            datosConexion.SelectDT("SELECT * FROM ESTADO;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposAut = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposAut.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposAut.Add(datosConexion.reader.GetString(1));
-                }
-
-                cbx_estLibro.Items.Add(datosConexion.reader.GetString(1));
-            }
+            cbx_estLibro.DataSource = datosConexion.dt;
+            cbx_estLibro.DisplayMember = "Estado";
+            cbx_estLibro.ValueMember = "idEstado";
         }
         private void comboBoxProv()
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT idProveedor, Nombre FROM PROVEEDOR;");
+            datosConexion.SelectDT("SELECT idProveedor, Nombre FROM PROVEEDOR;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposAut = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposAut.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposAut.Add(datosConexion.reader.GetString(1));
-                }
+            cbx_provLibro.DataSource = datosConexion.dt;
+            cbx_provLibro.DisplayMember = "Nombre";
+            cbx_provLibro.ValueMember = "idProveedor";
 
-                cbx_provLibro.Items.Add(datosConexion.reader.GetString(1));
-            }
         }
-
         #endregion
-
-        
     }
 }

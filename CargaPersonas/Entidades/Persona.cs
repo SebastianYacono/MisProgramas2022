@@ -9,7 +9,7 @@ namespace Entidades
     public class Persona
     {
         #region Constructor
-        public Persona(int cId, string cNomb, string cApell, string cDom, long cDni, DateTime cFechaNac, long cTel, string cMail, int cIdProv, int cIdLoc)
+        public Persona(int cId, string cNomb, string cApell, string cDom, long cDni, DateTime cFechaNac, decimal cTel, string cMail, int cIdProv, int cIdLoc)
         {
             id = cId;
             nomb = cNomb;
@@ -22,10 +22,8 @@ namespace Entidades
             idProv = cIdProv;
             idLoc = cIdLoc;
         }
-
-        public Persona (string cNomb, string cApell, string cDom, long cDni, DateTime cFechaNac, long cTel, string cMail, int cIdProv, int cIdLoc)
+        public Persona (string cNomb, string cApell, string cDom, long cDni, DateTime cFechaNac, decimal cTel, string cMail, int cIdProv, int cIdLoc)
         {
-            
             nomb = cNomb;
             apell = cApell;
             dom = cDom;
@@ -36,6 +34,16 @@ namespace Entidades
             idProv = cIdProv;
             idLoc = cIdLoc;
         }
+        public Persona()
+        {
+            nomb = "";
+            apell = "";
+            dom = "";
+            dni = 0;
+            fechaNac = DateTime.Today;
+            tel = 0;
+            mail = "";
+        }
         #endregion
 
         #region Atributos
@@ -45,9 +53,9 @@ namespace Entidades
         private string dom;
         private long dni;
         DateTime fechaNac;
-        private long tel;
+        private decimal tel;
         private string mail;
-        private int idProv;
+        int idProv;
         private int idLoc;
         #endregion
 
@@ -76,7 +84,7 @@ namespace Entidades
         {
             set { fechaNac = value; } get { return fechaNac; }
         }
-        public long p_tel
+        public decimal p_tel
         {
             set { tel = value; } get { return tel; }
         }
@@ -86,7 +94,7 @@ namespace Entidades
         }
         public int p_idProv
         {
-            set { p_idProv = value; } get { return idProv; }
+            set { idProv = value; } get { return idProv; }
         }
         public int p_idLoc
         {
@@ -98,6 +106,4 @@ namespace Entidades
 
         #endregion
     }
-
-
 }

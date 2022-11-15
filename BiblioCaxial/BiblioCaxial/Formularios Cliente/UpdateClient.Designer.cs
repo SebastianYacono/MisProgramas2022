@@ -45,8 +45,9 @@
             this.Btn_EditUClient = new System.Windows.Forms.Button();
             this.tb_ApellClient = new System.Windows.Forms.TextBox();
             this.tb_dirClient = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -106,7 +107,7 @@
             this.tb_mailClient.Location = new System.Drawing.Point(19, 229);
             this.tb_mailClient.Name = "tb_mailClient";
             this.tb_mailClient.Size = new System.Drawing.Size(376, 20);
-            this.tb_mailClient.TabIndex = 12;
+            this.tb_mailClient.TabIndex = 5;
             // 
             // label7
             // 
@@ -122,7 +123,7 @@
             this.tb_telClient.Location = new System.Drawing.Point(261, 188);
             this.tb_telClient.Name = "tb_telClient";
             this.tb_telClient.Size = new System.Drawing.Size(134, 20);
-            this.tb_telClient.TabIndex = 10;
+            this.tb_telClient.TabIndex = 4;
             // 
             // label4
             // 
@@ -138,7 +139,7 @@
             this.tb_nombClient.Location = new System.Drawing.Point(199, 100);
             this.tb_nombClient.Name = "tb_nombClient";
             this.tb_nombClient.Size = new System.Drawing.Size(196, 20);
-            this.tb_nombClient.TabIndex = 8;
+            this.tb_nombClient.TabIndex = 1;
             // 
             // cbx_barrioClient
             // 
@@ -146,7 +147,7 @@
             this.cbx_barrioClient.Location = new System.Drawing.Point(19, 187);
             this.cbx_barrioClient.Name = "cbx_barrioClient";
             this.cbx_barrioClient.Size = new System.Drawing.Size(236, 21);
-            this.cbx_barrioClient.TabIndex = 7;
+            this.cbx_barrioClient.TabIndex = 3;
             // 
             // label3
             // 
@@ -180,7 +181,7 @@
             this.Btn_CloseUClient.Location = new System.Drawing.Point(210, 255);
             this.Btn_CloseUClient.Name = "Btn_CloseUClient";
             this.Btn_CloseUClient.Size = new System.Drawing.Size(186, 23);
-            this.Btn_CloseUClient.TabIndex = 5;
+            this.Btn_CloseUClient.TabIndex = 7;
             this.Btn_CloseUClient.Text = "Cerrar";
             this.Btn_CloseUClient.UseVisualStyleBackColor = true;
             this.Btn_CloseUClient.Click += new System.EventHandler(this.Btn_CloseUClient_Click);
@@ -190,7 +191,7 @@
             this.Btn_EditUClient.Location = new System.Drawing.Point(19, 255);
             this.Btn_EditUClient.Name = "Btn_EditUClient";
             this.Btn_EditUClient.Size = new System.Drawing.Size(186, 23);
-            this.Btn_EditUClient.TabIndex = 3;
+            this.Btn_EditUClient.TabIndex = 6;
             this.Btn_EditUClient.Text = "Editar";
             this.Btn_EditUClient.UseVisualStyleBackColor = true;
             this.Btn_EditUClient.Click += new System.EventHandler(this.Btn_EditUClient_Click);
@@ -207,25 +208,23 @@
             this.tb_dirClient.Location = new System.Drawing.Point(19, 144);
             this.tb_dirClient.Name = "tb_dirClient";
             this.tb_dirClient.Size = new System.Drawing.Size(376, 20);
-            this.tb_dirClient.TabIndex = 1;
+            this.tb_dirClient.TabIndex = 2;
             // 
-            // label5
+            // pictureBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(103, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(232, 24);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "EDICIÓN DE CLIENTES";
+            this.pictureBox1.Image = global::BiblioCaxial.Properties.Resources.TitleCliEdit;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(415, 50);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // UpdateClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 377);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -235,8 +234,8 @@
             this.Text = "Editar Cliente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -257,8 +256,8 @@
         private System.Windows.Forms.Button Btn_EditUClient;
         private System.Windows.Forms.TextBox tb_ApellClient;
         private System.Windows.Forms.TextBox tb_dirClient;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_id;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

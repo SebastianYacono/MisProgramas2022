@@ -118,14 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="IconAlq" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconAlq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TitleAutEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleAutEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconDev" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconDev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconRen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconRen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AlqDe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlqDe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TitleProvNvo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleProvNvo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TitleLibInfo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleLibInfo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TitleCliEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleCliEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlqRe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlqRe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LogoBiblio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoBiblio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,10 +148,31 @@
   <data name="TitleLibEdit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TitleLibEdit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TitleLibInfo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TitleLibInfo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TitleAutNvo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleAutNvo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TitleLibNvo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TitleLibNvo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TitleProvEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleProvEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlqPr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlqPr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconRen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconRen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconAlq" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconAlq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TitleCliNvo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleCliNvo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlqNvo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlqNvo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlqInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlqInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

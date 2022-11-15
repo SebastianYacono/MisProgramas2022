@@ -245,6 +245,7 @@
             this.dgv_Client.Location = new System.Drawing.Point(6, 9);
             this.dgv_Client.Name = "dgv_Client";
             this.dgv_Client.ReadOnly = true;
+            this.dgv_Client.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Client.Size = new System.Drawing.Size(563, 186);
             this.dgv_Client.TabIndex = 4;
             // 
@@ -415,6 +416,7 @@
             this.dgv_Libros.Location = new System.Drawing.Point(6, 9);
             this.dgv_Libros.Name = "dgv_Libros";
             this.dgv_Libros.ReadOnly = true;
+            this.dgv_Libros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Libros.Size = new System.Drawing.Size(563, 186);
             this.dgv_Libros.TabIndex = 4;
             // 
@@ -559,6 +561,7 @@
             this.dgv_Autor.Location = new System.Drawing.Point(6, 9);
             this.dgv_Autor.Name = "dgv_Autor";
             this.dgv_Autor.ReadOnly = true;
+            this.dgv_Autor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Autor.Size = new System.Drawing.Size(563, 186);
             this.dgv_Autor.TabIndex = 4;
             // 
@@ -662,6 +665,7 @@
             this.dgv_prov.Location = new System.Drawing.Point(6, 9);
             this.dgv_prov.Name = "dgv_prov";
             this.dgv_prov.ReadOnly = true;
+            this.dgv_prov.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_prov.Size = new System.Drawing.Size(563, 186);
             this.dgv_prov.TabIndex = 0;
             // 
@@ -701,15 +705,17 @@
             this.Notificaciones.Size = new System.Drawing.Size(486, 43);
             this.Notificaciones.TabIndex = 3;
             this.Notificaciones.TabStop = false;
-            this.Notificaciones.Text = "Último libro ingresado";
             // 
             // lbl_LastBook
             // 
+            this.lbl_LastBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LastBook.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbl_LastBook.Location = new System.Drawing.Point(12, 16);
+            this.lbl_LastBook.Location = new System.Drawing.Point(12, 15);
             this.lbl_LastBook.Name = "lbl_LastBook";
             this.lbl_LastBook.Size = new System.Drawing.Size(465, 18);
             this.lbl_LastBook.TabIndex = 0;
+            this.lbl_LastBook.Text = "CONTAMOS CON MÁS DE 2500 LIBROS";
+            this.lbl_LastBook.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_FecHor
             // 

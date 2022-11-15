@@ -117,7 +117,7 @@
             this.cbx_idiomaLibro.Location = new System.Drawing.Point(19, 166);
             this.cbx_idiomaLibro.Name = "cbx_idiomaLibro";
             this.cbx_idiomaLibro.Size = new System.Drawing.Size(139, 21);
-            this.cbx_idiomaLibro.TabIndex = 26;
+            this.cbx_idiomaLibro.TabIndex = 4;
             // 
             // label12
             // 
@@ -142,14 +142,14 @@
             this.tb_ubi.Location = new System.Drawing.Point(163, 166);
             this.tb_ubi.Name = "tb_ubi";
             this.tb_ubi.Size = new System.Drawing.Size(66, 20);
-            this.tb_ubi.TabIndex = 23;
+            this.tb_ubi.TabIndex = 5;
             // 
             // rtb_descLibro
             // 
             this.rtb_descLibro.Location = new System.Drawing.Point(19, 247);
             this.rtb_descLibro.Name = "rtb_descLibro";
             this.rtb_descLibro.Size = new System.Drawing.Size(376, 72);
-            this.rtb_descLibro.TabIndex = 22;
+            this.rtb_descLibro.TabIndex = 9;
             this.rtb_descLibro.Text = "";
             // 
             // label9
@@ -169,7 +169,7 @@
             this.dtp_fecIngLibro.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dtp_fecIngLibro.Name = "dtp_fecIngLibro";
             this.dtp_fecIngLibro.Size = new System.Drawing.Size(133, 20);
-            this.dtp_fecIngLibro.TabIndex = 19;
+            this.dtp_fecIngLibro.TabIndex = 8;
             this.dtp_fecIngLibro.Value = new System.DateTime(2022, 10, 30, 22, 29, 53, 0);
             // 
             // cbx_provLibro
@@ -178,7 +178,7 @@
             this.cbx_provLibro.Location = new System.Drawing.Point(19, 207);
             this.cbx_provLibro.Name = "cbx_provLibro";
             this.cbx_provLibro.Size = new System.Drawing.Size(237, 21);
-            this.cbx_provLibro.TabIndex = 18;
+            this.cbx_provLibro.TabIndex = 7;
             // 
             // cbx_autorLibro
             // 
@@ -186,7 +186,7 @@
             this.cbx_autorLibro.Location = new System.Drawing.Point(19, 126);
             this.cbx_autorLibro.Name = "cbx_autorLibro";
             this.cbx_autorLibro.Size = new System.Drawing.Size(231, 21);
-            this.cbx_autorLibro.TabIndex = 17;
+            this.cbx_autorLibro.TabIndex = 2;
             // 
             // label8
             // 
@@ -203,7 +203,7 @@
             this.cbx_estLibro.Location = new System.Drawing.Point(235, 166);
             this.cbx_estLibro.Name = "cbx_estLibro";
             this.cbx_estLibro.Size = new System.Drawing.Size(160, 21);
-            this.cbx_estLibro.TabIndex = 15;
+            this.cbx_estLibro.TabIndex = 6;
             // 
             // cbx_generoLibro
             // 
@@ -211,7 +211,7 @@
             this.cbx_generoLibro.Location = new System.Drawing.Point(256, 126);
             this.cbx_generoLibro.Name = "cbx_generoLibro";
             this.cbx_generoLibro.Size = new System.Drawing.Size(139, 21);
-            this.cbx_generoLibro.TabIndex = 14;
+            this.cbx_generoLibro.TabIndex = 3;
             // 
             // label6
             // 
@@ -263,7 +263,7 @@
             this.Btn_CloseLibro.Location = new System.Drawing.Point(209, 368);
             this.Btn_CloseLibro.Name = "Btn_CloseLibro";
             this.Btn_CloseLibro.Size = new System.Drawing.Size(186, 23);
-            this.Btn_CloseLibro.TabIndex = 8;
+            this.Btn_CloseLibro.TabIndex = 13;
             this.Btn_CloseLibro.Text = "Cerrar";
             this.Btn_CloseLibro.UseVisualStyleBackColor = true;
             this.Btn_CloseLibro.Click += new System.EventHandler(this.Btn_CloseLibro_Click);
@@ -273,7 +273,7 @@
             this.Btn_EditLibro.Location = new System.Drawing.Point(19, 368);
             this.Btn_EditLibro.Name = "Btn_EditLibro";
             this.Btn_EditLibro.Size = new System.Drawing.Size(186, 23);
-            this.Btn_EditLibro.TabIndex = 6;
+            this.Btn_EditLibro.TabIndex = 12;
             this.Btn_EditLibro.Text = "Editar";
             this.Btn_EditLibro.UseVisualStyleBackColor = true;
             this.Btn_EditLibro.Click += new System.EventHandler(this.Btn_EditLibro_Click);
@@ -302,7 +302,7 @@
             this.rb_No.Location = new System.Drawing.Point(312, 13);
             this.rb_No.Name = "rb_No";
             this.rb_No.Size = new System.Drawing.Size(39, 17);
-            this.rb_No.TabIndex = 27;
+            this.rb_No.TabIndex = 11;
             this.rb_No.TabStop = true;
             this.rb_No.Text = "No";
             this.rb_No.UseVisualStyleBackColor = true;
@@ -314,7 +314,7 @@
             this.rb_Yes.Location = new System.Drawing.Point(257, 13);
             this.rb_Yes.Name = "rb_Yes";
             this.rb_Yes.Size = new System.Drawing.Size(34, 17);
-            this.rb_Yes.TabIndex = 26;
+            this.rb_Yes.TabIndex = 10;
             this.rb_Yes.TabStop = true;
             this.rb_Yes.Text = "Si";
             this.rb_Yes.UseVisualStyleBackColor = true;

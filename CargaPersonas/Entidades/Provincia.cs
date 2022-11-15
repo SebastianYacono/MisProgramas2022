@@ -11,7 +11,8 @@ namespace Entidades
         #region Constructor
         public Provincia()
         {
-
+            idProv = 0;
+            prov = "";
         }
         #endregion
 

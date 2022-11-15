@@ -29,7 +29,6 @@ namespace BiblioCaxial
 
             this.principal = ActClient;
 
-
             this.id = id;
             this.apellido = apellido;
             this.nombre = nombre;
@@ -45,27 +44,37 @@ namespace BiblioCaxial
             cbx_barrioClient.Text = barrio;
             tb_telClient.Text = telefono.ToString();
             tb_mailClient.Text = mail;
-
-            
-
         }
 
         #region Métodos de los botones
         private void Btn_EditUClient_Click(object sender, EventArgs e)
         {
-            int idBarrio = Convert.ToInt32(cbx_barrioClient.SelectedIndex);
-            string alias = tb_ApellClient.Text + ", " + tb_nombClient.Text;
+            if (tb_ApellClient.Text != "" && tb_nombClient.Text != "" && tb_dirClient.Text != "" && tb_telClient.Text != "" && tb_mailClient.Text != "" && cbx_barrioClient.Text != "")
+            {
+                if (valTel(tb_telClient.Text) == true)
+                {
+                    int idBarrio = Convert.ToInt32(cbx_barrioClient.SelectedValue);
+                    string alias = tb_ApellClient.Text + ", " + tb_nombClient.Text;
 
-            idBarrio++;
 
-            DatosConexion datosConexion = new DatosConexion();
+                    DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Update("UPDATE CLIENTE SET Apellido = '" + tb_ApellClient.Text + "', Nombre = '" + tb_nombClient.Text + "', Direccion = '" + tb_dirClient.Text + "', idBarrio = " + idBarrio + ", Telefono = " + tb_telClient.Text + ", Email = '" + tb_mailClient.Text + "', AliasCl = '" + alias +"' WHERE idCliente = " + id);
-            Thread.Sleep(1000);
-            Agregar();
+                    datosConexion.Update("UPDATE CLIENTE SET Apellido = '" + tb_ApellClient.Text + "', Nombre = '" + tb_nombClient.Text + "', Direccion = '" + tb_dirClient.Text + "', idBarrio = " + idBarrio + ", Telefono = " + tb_telClient.Text + ", Email = '" + tb_mailClient.Text + "', AliasCl = '" + alias + "' WHERE idCliente = " + id);
+                    Thread.Sleep(1000);
+                    Agregar();
 
-            MessageBox.Show("El cliente ha sido cambiado exitosamente", "Editar cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                    MessageBox.Show("El cliente ha sido cambiado exitosamente", "Editar cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El teléfono debe estar compuesto por Código de área sin 0 y teléfono sin 15. Ej.: 3514517225", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void Btn_CloseUClient_Click(object sender, EventArgs e)
         {
@@ -78,38 +87,30 @@ namespace BiblioCaxial
         {
             principal.LlenarDgvCliente();
         }
-        private void limpiarForm()
-        {
-            tb_ApellClient.Clear();
-            tb_nombClient.Clear();
-            tb_dirClient.Clear();
-            tb_telClient.Clear();
-            tb_mailClient.Clear();
-            cbx_barrioClient.Text = "";
-        }
         private void comboBoxBarrio()
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT * FROM BARRIO;");
+            datosConexion.SelectDT("SELECT * FROM BARRIO;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposBarrio = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposBarrio.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposBarrio.Add(datosConexion.reader.GetString(1));
-                }
-
-                cbx_barrioClient.Items.Add(datosConexion.reader.GetString(1));
-            }
+            cbx_barrioClient.DataSource = datosConexion.dt;
+            cbx_barrioClient.DisplayMember = "Barrio";
+            cbx_barrioClient.ValueMember = "idBarrio";
         }
+        private bool valTel(string ValidarTel)
+        {
+            int i = 0;
+            if (ValidarTel.Length != 10)
+                return false;
 
+            while (i <= ValidarTel.Length - 1)
+            {
+                if (!char.IsDigit(ValidarTel, i))
+                    return false;
+                i++;
+            }
+            return true;
+        }
         #endregion       
-
     }
 }

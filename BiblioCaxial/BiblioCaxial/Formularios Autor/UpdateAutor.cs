@@ -48,21 +48,25 @@ namespace BiblioCaxial
         #region Métodos de los botones
         private void Btn_EditAut_Click(object sender, EventArgs e)
         {
-            int idpais = Convert.ToInt32(cbx_paisUAut.SelectedIndex);
-            int idgenero = Convert.ToInt32(cbx_genUAutor.SelectedIndex);
-            alias = tb_apellUAut.Text + ", " + tb_nombUAut.Text;
+            if (tb_nombUAut.Text != "" && tb_apellUAut.Text != "" && cbx_genUAutor.Text != "" && cbx_paisUAut.Text != "")
+            {
+                int idpais = Convert.ToInt32(cbx_paisUAut.SelectedValue);
+                int idgenero = Convert.ToInt32(cbx_genUAutor.SelectedValue);
+                alias = tb_apellUAut.Text + ", " + tb_nombUAut.Text;
 
-            idpais++;
-            idgenero++;
+                DatosConexion datosConexion = new DatosConexion();
 
-            DatosConexion datosConexion = new DatosConexion();
+                datosConexion.Update("UPDATE AUTOR SET Apellido = '" + tb_apellUAut.Text + "', Nombre = '" + tb_nombUAut.Text + "', idPais = " + idpais + ", idGenero = " + idgenero + ", Alias= '" + alias + "' WHERE idAutor = " + id);
+                Thread.Sleep(1000);
+                Agregar();
 
-            datosConexion.Update("UPDATE AUTOR SET Apellido = '" + tb_apellUAut.Text + "', Nombre = '" + tb_nombUAut.Text + "', idPais = " + idpais + ", idGenero = " + idgenero + ", Alias= '" + alias +"' WHERE idAutor = " + id);
-            Thread.Sleep(1000);
-            Agregar();
-
-            MessageBox.Show("El autor ha sido cambiado exitosamente", "Editar autor", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                MessageBox.Show("El autor ha sido cambiado exitosamente", "Editar autor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Debes completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void Btn_CloseAut_Click(object sender, EventArgs e)
         {
@@ -75,49 +79,26 @@ namespace BiblioCaxial
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT * FROM Pais;");
+            datosConexion.SelectDT("SELECT * FROM Pais;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposPais = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposPais.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposPais.Add(datosConexion.reader.GetString(1));
-                }
-
-                cbx_paisUAut.Items.Add(datosConexion.reader.GetString(1));
-            }
+            cbx_paisUAut.DataSource = datosConexion.dt;
+            cbx_paisUAut.DisplayMember = "Pais";
+            cbx_paisUAut.ValueMember = "idPais";
         }
         private void ComboBoxGen()
         {
             DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Select("SELECT * FROM Genero;");
+            datosConexion.SelectDT("SELECT * FROM Genero;");
 
-            while (datosConexion.reader.Read())
-            {
-                List<object> CamposGen = new List<object>();
-                if (!datosConexion.reader.IsDBNull(0))
-                {
-                    CamposGen.Add(datosConexion.reader.GetInt32(0));
-                }
-                if (!datosConexion.reader.IsDBNull(1))
-                {
-                    CamposGen.Add(datosConexion.reader.GetString(1));
-                }
-
-                cbx_genUAutor.Items.Add(datosConexion.reader.GetString(1));
-            }
+            cbx_genUAutor.DataSource = datosConexion.dt;
+            cbx_genUAutor.DisplayMember = "Genero";
+            cbx_genUAutor.ValueMember = "idGenero";
         }
         protected void Agregar()
         {
             principal.LlenarDgvAutor();
         }
-
         #endregion
 
 

@@ -63,6 +63,56 @@ namespace BiblioCaxial.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlqDe {
+            get {
+                object obj = ResourceManager.GetObject("AlqDe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlqInfo {
+            get {
+                object obj = ResourceManager.GetObject("AlqInfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlqNvo {
+            get {
+                object obj = ResourceManager.GetObject("AlqNvo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlqPr {
+            get {
+                object obj = ResourceManager.GetObject("AlqPr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlqRe {
+            get {
+                object obj = ResourceManager.GetObject("AlqRe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconAlq {
             get {
                 object obj = ResourceManager.GetObject("IconAlq", resourceCulture);
@@ -113,6 +163,46 @@ namespace BiblioCaxial.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TitleAutEdit {
+            get {
+                object obj = ResourceManager.GetObject("TitleAutEdit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleAutNvo {
+            get {
+                object obj = ResourceManager.GetObject("TitleAutNvo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleCliEdit {
+            get {
+                object obj = ResourceManager.GetObject("TitleCliEdit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleCliNvo {
+            get {
+                object obj = ResourceManager.GetObject("TitleCliNvo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TitleLibEdit2 {
             get {
                 object obj = ResourceManager.GetObject("TitleLibEdit2", resourceCulture);
@@ -136,6 +226,26 @@ namespace BiblioCaxial.Properties {
         internal static System.Drawing.Bitmap TitleLibNvo2 {
             get {
                 object obj = ResourceManager.GetObject("TitleLibNvo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleProvEdit {
+            get {
+                object obj = ResourceManager.GetObject("TitleProvEdit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleProvNvo {
+            get {
+                object obj = ResourceManager.GetObject("TitleProvNvo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -30,11 +30,13 @@ namespace BiblioCaxial
         }
         private void btn_Ren_Click(object sender, EventArgs e)
         {
-
+            RenPrincipal renPrincipal = new RenPrincipal();
+            renPrincipal.ShowDialog();
         }
         private void btn_Dev_Click(object sender, EventArgs e)
         {
-
+            DevPrincipal devPrincipal = new DevPrincipal();
+            devPrincipal.ShowDialog();
         }
 
         #endregion
@@ -651,15 +653,6 @@ namespace BiblioCaxial
         {
             Application.Exit();
         }
-
-
-
-
-
-
-
         #endregion
-
-
     }
 }

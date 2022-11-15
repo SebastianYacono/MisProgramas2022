@@ -23,21 +23,30 @@ namespace BiblioCaxial
         #region Métodos de los botones
         private void Btn_AddProv_Click(object sender, EventArgs e)
         {
-            string nombre = tb_nombProv.Text;
-            decimal telefono = Convert.ToDecimal(tb_telProv.Text);
-            string email = tb_emailProv.Text;
+            if (tb_nombProv.Text != "" && tb_telProv.Text != "" && tb_emailProv.Text != "")
+            {
+                if (valTel(tb_telProv.Text) == true)
+                {
+                    string nombre = tb_nombProv.Text;
+                    decimal telefono = Convert.ToDecimal(tb_telProv.Text);
+                    string email = tb_emailProv.Text;
 
-            DatosConexion datosConexion = new DatosConexion();
+                    DatosConexion datosConexion = new DatosConexion();
 
-            datosConexion.Insert("INSERT INTO PROVEEDOR(Nombre,Telefono,Email) VALUES('" + nombre + "','" + telefono + "','" + email + "')");
+                    datosConexion.Insert("INSERT INTO PROVEEDOR(Nombre,Telefono,Email) VALUES('" + nombre + "','" + telefono + "','" + email + "')");
 
-
-            MessageBox.Show("El proveedor ha sido agregado exitosamente", "Añadir proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            Agregar();
-
-            limpiarForm();
+                    Agregar();
+                    MessageBox.Show("El proveedor ha sido agregado exitosamente", "Añadir proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("El teléfono debe estar compuesto por Código de área sin 0 y teléfono sin 15. Ej.: 3514517225", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void Btn_CloseProv_Click(object sender, EventArgs e)
         {
@@ -59,6 +68,20 @@ namespace BiblioCaxial
         protected void Agregar()
         {
             principal.LlenarDgvProv();
+        }
+        private bool valTel(string ValidarTel)
+        {
+            int i = 0;
+            if (ValidarTel.Length != 10)
+                return false;
+
+            while (i <= ValidarTel.Length - 1)
+            {
+                if (!char.IsDigit(ValidarTel, i))
+                    return false;
+                i++;
+            }
+            return true;
         }
         #endregion
     }

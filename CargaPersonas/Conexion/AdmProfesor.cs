@@ -17,11 +17,11 @@ namespace Conexion
             string orden = string.Empty;
 
             if (accion == "INSERT")
-                orden = "INSERT into PROFESOR (Nombre, Apellido, Domicilio, DNI, FechaNac, Telefono, Email, idProv, idLoc, Legajo, CantHs) VALUES ('" + ObjProfe.p_nomb + "', '" + ObjProfe.p_apell + "', '" + ObjProfe.p_dom + "', " + ObjProfe.p_dni + ", '" + ObjProfe.p_fechaNac + "', " + ObjProfe.p_tel + ", '" + ObjProfe.p_mail + "', " + ObjProfe.p_idProv + ", " + ObjProfe.p_idLoc + ", '" + ObjProfe.p_legajo + "', " + ObjProfe.p_cantHs + ");";
+                orden = "INSERT INTO PROFESORES (Nombre, Apellido, Domicilio, DNI, FechaNac, Telefono, Email, idProv, idLoc, Legajo, CantHs) VALUES ('" + ObjProfe.p_nomb + "', '" + ObjProfe.p_apell + "', '" + ObjProfe.p_dom + "', " + ObjProfe.p_dni + ", '" + ObjProfe.p_fechaNac + "', " + ObjProfe.p_tel + ", '" + ObjProfe.p_mail + "', " + ObjProfe.p_idProv + ", " + ObjProfe.p_idLoc + ", '" + ObjProfe.p_legajo + "', " + ObjProfe.p_cantHs + ");";
             if (accion == "DELETE")
-                orden = "DELETE FROM ALUMNO WHERE(idPersona = " + ObjProfe.p_id + ")";
+                orden = "DELETE FROM PROFESORES WHERE(idPersona = " + ObjProfe.p_id + ")";
             if (accion == "UPDATE")
-                orden = "UPDATE PROFESOR SET Nombre = '" + ObjProfe.p_nomb + "', Apellido = '" + ObjProfe.p_apell + "', Domicilio = '" + ObjProfe.p_dom + "', DNI = " + ObjProfe.p_dni + ", FechaNac = '" + ObjProfe.p_fechaNac + "', Telefono = " + ObjProfe.p_tel + ", Email = '" + ObjProfe.p_mail + "', idProv = " + ObjProfe.p_idProv + ", idLoc = " + ObjProfe.p_idLoc + ", Legajo = '" + ObjProfe.p_legajo + "', CantHs = " + ObjProfe.p_cantHs + ";";
+                orden = "UPDATE PROFESORES SET Nombre = '" + ObjProfe.p_nomb + "', Apellido = '" + ObjProfe.p_apell + "', Domicilio = '" + ObjProfe.p_dom + "', DNI = " + ObjProfe.p_dni + ", FechaNac = '" + ObjProfe.p_fechaNac + "', Telefono = " + ObjProfe.p_tel + ", Email = '" + ObjProfe.p_mail + "', idProv = " + ObjProfe.p_idProv + ", idLoc = " + ObjProfe.p_idLoc + ", Legajo = '" + ObjProfe.p_legajo + "', CantHs = " + ObjProfe.p_cantHs + " WHERE idPersona= " + ObjProfe.p_id + ";";
 
 
             OleDbCommand cmd = new OleDbCommand(orden, conexion);
@@ -47,9 +47,9 @@ namespace Conexion
             string orden = string.Empty;
 
             if (cual != "SELECT")
-                orden = "SELECT * FROM PROFESOR WHERE idPersona = " + int.Parse(cual) + ";";
+                orden = "SELECT PROFESORES.IdPersona, PROFESORES.Apellido, PROFESORES.Nombre, PROFESORES.Domicilio, PROFESORES.DNI, PROFESORES.FechaNac, PROFESORES.Telefono, PROFESORES.Email, PROVINCIA.Provincia, LOCALIDAD.Localidad, PROFESORES.Legajo, PROFESORES.CantHs, PROVINCIA.idProv, LOCALIDAD.idLoc FROM PROVINCIA INNER JOIN (LOCALIDAD INNER JOIN PROFESORES ON LOCALIDAD.idLoc = PROFESORES.idLoc) ON PROVINCIA.idProv = PROFESORES.idProv WHERE idPersona = " + int.Parse(cual) + ";";
             else
-                orden = "SELECT * FROM ALUMNO;";
+                orden = "SELECT PROFESORES.IdPersona, PROFESORES.Apellido, PROFESORES.Nombre, PROFESORES.Domicilio, PROFESORES.DNI, PROFESORES.FechaNac, PROFESORES.Telefono, PROFESORES.Email, PROVINCIA.Provincia, LOCALIDAD.Localidad, PROFESORES.Legajo, PROFESORES.CantHs, PROVINCIA.idProv, LOCALIDAD.idLoc FROM PROVINCIA INNER JOIN (LOCALIDAD INNER JOIN PROFESORES ON LOCALIDAD.idLoc = PROFESORES.idLoc) ON PROVINCIA.idProv = PROFESORES.idProv;";
 
             OleDbCommand cmd = new OleDbCommand(orden, conexion);
             DataSet ds = new DataSet();
@@ -64,7 +64,7 @@ namespace Conexion
             }
             catch (Exception e)
             {
-                throw new Exception("Error al listar Productos", e);
+                throw new Exception("Error al listar Profesores", e);
             }
             finally
             {

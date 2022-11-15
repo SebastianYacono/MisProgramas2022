@@ -46,16 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios Alquiler\AlqNvo.cs">
+    <Compile Include="Formularios Bienvenidos\AlqInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios Alquiler\AlqNvo.Designer.cs">
+    <Compile Include="Formularios Bienvenidos\AlqInfo.Designer.cs">
+      <DependentUpon>AlqInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios Bienvenidos\DevPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Bienvenidos\DevPrincipal.Designer.cs">
+      <DependentUpon>DevPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios Bienvenidos\AlqNvo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Bienvenidos\AlqNvo.Designer.cs">
       <DependentUpon>AlqNvo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios Alquiler\AlqPrincipal.cs">
+    <Compile Include="Formularios Bienvenidos\AlqPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios Alquiler\AlqPrincipal.Designer.cs">
+    <Compile Include="Formularios Bienvenidos\AlqPrincipal.Designer.cs">
       <DependentUpon>AlqPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="DatosConexion.cs" />
@@ -127,10 +139,22 @@
     <Compile Include="Formularios Libros\UpdateLibro.Designer.cs">
       <DependentUpon>UpdateLibro.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formularios Alquiler\AlqNvo.resx">
+    <Compile Include="Formularios Bienvenidos\RenPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Bienvenidos\RenPrincipal.Designer.cs">
+      <DependentUpon>RenPrincipal.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios Bienvenidos\AlqInfo.resx">
+      <DependentUpon>AlqInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Bienvenidos\DevPrincipal.resx">
+      <DependentUpon>DevPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Bienvenidos\AlqNvo.resx">
       <DependentUpon>AlqNvo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Alquiler\AlqPrincipal.resx">
+    <EmbeddedResource Include="Formularios Bienvenidos\AlqPrincipal.resx">
       <DependentUpon>AlqPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios Autor\NewAutor.resx">
@@ -170,6 +194,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Bienvenidos\RenPrincipal.resx">
+      <DependentUpon>RenPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -198,6 +225,38 @@
     <None Include="Resources\IconDev.png" />
     <None Include="Resources\IconAlq.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\TitleAutNvo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleAutEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleProvEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleProvNvo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleCliEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleCliNvo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlqPr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlqDe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlqRe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlqNvo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlqInfo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

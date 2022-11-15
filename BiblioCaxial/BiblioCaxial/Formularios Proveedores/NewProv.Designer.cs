@@ -38,8 +38,9 @@
             this.tb_nombProv = new System.Windows.Forms.TextBox();
             this.tb_telProv = new System.Windows.Forms.TextBox();
             this.tb_emailProv = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_AddProv
@@ -137,23 +138,22 @@
             this.tb_emailProv.Size = new System.Drawing.Size(236, 20);
             this.tb_emailProv.TabIndex = 2;
             // 
-            // label5
+            // pictureBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(12, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(277, 24);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "CARGA DE PROVEEDORES";
+            this.pictureBox1.Image = global::BiblioCaxial.Properties.Resources.TitleProvNvo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(276, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // NewProv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 322);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -164,8 +164,8 @@
             this.Text = "Agregar proveedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -181,6 +181,6 @@
         private System.Windows.Forms.TextBox tb_nombProv;
         private System.Windows.Forms.TextBox tb_telProv;
         private System.Windows.Forms.TextBox tb_emailProv;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_mailClient = new System.Windows.Forms.TextBox();
@@ -45,19 +44,10 @@
             this.Btn_AddClient = new System.Windows.Forms.Button();
             this.tb_ApellClient = new System.Windows.Forms.TextBox();
             this.tb_dirClient = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(110, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(220, 24);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "CARGA DE CLIENTES";
             // 
             // groupBox1
             // 
@@ -209,12 +199,21 @@
             this.tb_dirClient.Size = new System.Drawing.Size(376, 20);
             this.tb_dirClient.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BiblioCaxial.Properties.Resources.TitleCliNvo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(415, 50);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 307);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -224,14 +223,12 @@
             this.Text = "Agregar cliente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbx_barrioClient;
         private System.Windows.Forms.Label label3;
@@ -248,5 +245,6 @@
         private System.Windows.Forms.TextBox tb_telClient;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tb_nombClient;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

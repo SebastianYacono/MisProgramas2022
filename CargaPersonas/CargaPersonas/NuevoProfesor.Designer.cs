@@ -64,7 +64,7 @@
             this.btn_Cerrar.Location = new System.Drawing.Point(262, 392);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cerrar.TabIndex = 9;
+            this.btn_Cerrar.TabIndex = 14;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = true;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -74,7 +74,7 @@
             this.btn_limpiar.Location = new System.Drawing.Point(48, 392);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
-            this.btn_limpiar.TabIndex = 8;
+            this.btn_limpiar.TabIndex = 13;
             this.btn_limpiar.Text = "Limpiar";
             this.btn_limpiar.UseVisualStyleBackColor = true;
             this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
@@ -84,9 +84,10 @@
             this.btn_Agregar.Location = new System.Drawing.Point(156, 392);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 7;
+            this.btn_Agregar.TabIndex = 12;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // groupBox1
             // 
@@ -123,7 +124,7 @@
             this.tb_Horas.Location = new System.Drawing.Point(190, 261);
             this.tb_Horas.Name = "tb_Horas";
             this.tb_Horas.Size = new System.Drawing.Size(162, 20);
-            this.tb_Horas.TabIndex = 23;
+            this.tb_Horas.TabIndex = 11;
             // 
             // label12
             // 
@@ -139,7 +140,7 @@
             this.tb_Legajo.Location = new System.Drawing.Point(19, 261);
             this.tb_Legajo.Name = "tb_Legajo";
             this.tb_Legajo.Size = new System.Drawing.Size(162, 20);
-            this.tb_Legajo.TabIndex = 19;
+            this.tb_Legajo.TabIndex = 10;
             // 
             // label10
             // 
@@ -175,7 +176,7 @@
             this.cbx_Loc.Location = new System.Drawing.Point(190, 173);
             this.cbx_Loc.Name = "cbx_Loc";
             this.cbx_Loc.Size = new System.Drawing.Size(162, 21);
-            this.cbx_Loc.TabIndex = 15;
+            this.cbx_Loc.TabIndex = 7;
             // 
             // cbx_Prov
             // 
@@ -183,7 +184,7 @@
             this.cbx_Prov.Location = new System.Drawing.Point(19, 173);
             this.cbx_Prov.Name = "cbx_Prov";
             this.cbx_Prov.Size = new System.Drawing.Size(162, 21);
-            this.cbx_Prov.TabIndex = 14;
+            this.cbx_Prov.TabIndex = 6;
             this.cbx_Prov.SelectionChangeCommitted += new System.EventHandler(this.cbx_Prov_SelectionChangeCommitted);
             // 
             // tb_Mail
@@ -191,7 +192,7 @@
             this.tb_Mail.Location = new System.Drawing.Point(145, 217);
             this.tb_Mail.Name = "tb_Mail";
             this.tb_Mail.Size = new System.Drawing.Size(208, 20);
-            this.tb_Mail.TabIndex = 13;
+            this.tb_Mail.TabIndex = 9;
             // 
             // label7
             // 
@@ -207,7 +208,7 @@
             this.tb_Tel.Location = new System.Drawing.Point(19, 217);
             this.tb_Tel.Name = "tb_Tel";
             this.tb_Tel.Size = new System.Drawing.Size(111, 20);
-            this.tb_Tel.TabIndex = 11;
+            this.tb_Tel.TabIndex = 8;
             // 
             // label6
             // 
@@ -232,7 +233,7 @@
             this.tb_Dir.Location = new System.Drawing.Point(19, 129);
             this.tb_Dir.Name = "tb_Dir";
             this.tb_Dir.Size = new System.Drawing.Size(334, 20);
-            this.tb_Dir.TabIndex = 8;
+            this.tb_Dir.TabIndex = 5;
             // 
             // label4
             // 
@@ -245,17 +246,18 @@
             // 
             // dtp_fecNac
             // 
+            this.dtp_fecNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecNac.Location = new System.Drawing.Point(190, 85);
             this.dtp_fecNac.Name = "dtp_fecNac";
             this.dtp_fecNac.Size = new System.Drawing.Size(165, 20);
-            this.dtp_fecNac.TabIndex = 6;
+            this.dtp_fecNac.TabIndex = 4;
             // 
             // tb_Dni
             // 
             this.tb_Dni.Location = new System.Drawing.Point(19, 85);
             this.tb_Dni.Name = "tb_Dni";
             this.tb_Dni.Size = new System.Drawing.Size(165, 20);
-            this.tb_Dni.TabIndex = 5;
+            this.tb_Dni.TabIndex = 3;
             // 
             // label3
             // 
@@ -271,7 +273,7 @@
             this.tb_Nomb.Location = new System.Drawing.Point(190, 42);
             this.tb_Nomb.Name = "tb_Nomb";
             this.tb_Nomb.Size = new System.Drawing.Size(165, 20);
-            this.tb_Nomb.TabIndex = 3;
+            this.tb_Nomb.TabIndex = 2;
             // 
             // label2
             // 
@@ -287,7 +289,7 @@
             this.tb_Apell.Location = new System.Drawing.Point(19, 42);
             this.tb_Apell.Name = "tb_Apell";
             this.tb_Apell.Size = new System.Drawing.Size(165, 20);
-            this.tb_Apell.TabIndex = 1;
+            this.tb_Apell.TabIndex = 0;
             // 
             // label1
             // 
@@ -321,6 +323,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NuevoProfesor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Profesor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

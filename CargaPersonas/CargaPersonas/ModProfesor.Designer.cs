@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_Cerrar = new System.Windows.Forms.Button();
-            this.btn_limpiar = new System.Windows.Forms.Button();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_Horas = new System.Windows.Forms.TextBox();
@@ -61,32 +60,23 @@
             // 
             // btn_Cerrar
             // 
-            this.btn_Cerrar.Location = new System.Drawing.Point(262, 392);
+            this.btn_Cerrar.Location = new System.Drawing.Point(210, 392);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cerrar.TabIndex = 14;
+            this.btn_Cerrar.TabIndex = 12;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = true;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
-            // btn_limpiar
-            // 
-            this.btn_limpiar.Location = new System.Drawing.Point(48, 392);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
-            this.btn_limpiar.TabIndex = 13;
-            this.btn_limpiar.Text = "Limpiar";
-            this.btn_limpiar.UseVisualStyleBackColor = true;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
-            // 
             // btn_Editar
             // 
-            this.btn_Editar.Location = new System.Drawing.Point(156, 392);
+            this.btn_Editar.Location = new System.Drawing.Point(104, 392);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Editar.TabIndex = 12;
+            this.btn_Editar.TabIndex = 11;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // groupBox1
             // 
@@ -123,7 +113,7 @@
             this.tb_Horas.Location = new System.Drawing.Point(190, 261);
             this.tb_Horas.Name = "tb_Horas";
             this.tb_Horas.Size = new System.Drawing.Size(162, 20);
-            this.tb_Horas.TabIndex = 23;
+            this.tb_Horas.TabIndex = 10;
             // 
             // label12
             // 
@@ -139,7 +129,7 @@
             this.tb_Legajo.Location = new System.Drawing.Point(19, 261);
             this.tb_Legajo.Name = "tb_Legajo";
             this.tb_Legajo.Size = new System.Drawing.Size(162, 20);
-            this.tb_Legajo.TabIndex = 19;
+            this.tb_Legajo.TabIndex = 9;
             // 
             // label10
             // 
@@ -175,7 +165,7 @@
             this.cbx_Loc.Location = new System.Drawing.Point(190, 173);
             this.cbx_Loc.Name = "cbx_Loc";
             this.cbx_Loc.Size = new System.Drawing.Size(162, 21);
-            this.cbx_Loc.TabIndex = 15;
+            this.cbx_Loc.TabIndex = 6;
             // 
             // cbx_Prov
             // 
@@ -183,7 +173,7 @@
             this.cbx_Prov.Location = new System.Drawing.Point(19, 173);
             this.cbx_Prov.Name = "cbx_Prov";
             this.cbx_Prov.Size = new System.Drawing.Size(162, 21);
-            this.cbx_Prov.TabIndex = 14;
+            this.cbx_Prov.TabIndex = 5;
             this.cbx_Prov.SelectionChangeCommitted += new System.EventHandler(this.cbx_Prov_SelectionChangeCommitted);
             // 
             // tb_Mail
@@ -191,7 +181,7 @@
             this.tb_Mail.Location = new System.Drawing.Point(145, 217);
             this.tb_Mail.Name = "tb_Mail";
             this.tb_Mail.Size = new System.Drawing.Size(208, 20);
-            this.tb_Mail.TabIndex = 13;
+            this.tb_Mail.TabIndex = 8;
             // 
             // label7
             // 
@@ -207,7 +197,7 @@
             this.tb_Tel.Location = new System.Drawing.Point(19, 217);
             this.tb_Tel.Name = "tb_Tel";
             this.tb_Tel.Size = new System.Drawing.Size(111, 20);
-            this.tb_Tel.TabIndex = 11;
+            this.tb_Tel.TabIndex = 7;
             // 
             // label6
             // 
@@ -232,7 +222,7 @@
             this.tb_Dir.Location = new System.Drawing.Point(19, 129);
             this.tb_Dir.Name = "tb_Dir";
             this.tb_Dir.Size = new System.Drawing.Size(334, 20);
-            this.tb_Dir.TabIndex = 8;
+            this.tb_Dir.TabIndex = 4;
             // 
             // label4
             // 
@@ -245,17 +235,18 @@
             // 
             // dtp_fecNac
             // 
+            this.dtp_fecNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecNac.Location = new System.Drawing.Point(190, 85);
             this.dtp_fecNac.Name = "dtp_fecNac";
             this.dtp_fecNac.Size = new System.Drawing.Size(165, 20);
-            this.dtp_fecNac.TabIndex = 6;
+            this.dtp_fecNac.TabIndex = 3;
             // 
             // tb_Dni
             // 
             this.tb_Dni.Location = new System.Drawing.Point(19, 85);
             this.tb_Dni.Name = "tb_Dni";
             this.tb_Dni.Size = new System.Drawing.Size(165, 20);
-            this.tb_Dni.TabIndex = 5;
+            this.tb_Dni.TabIndex = 2;
             // 
             // label3
             // 
@@ -271,7 +262,7 @@
             this.tb_Nomb.Location = new System.Drawing.Point(190, 42);
             this.tb_Nomb.Name = "tb_Nomb";
             this.tb_Nomb.Size = new System.Drawing.Size(165, 20);
-            this.tb_Nomb.TabIndex = 3;
+            this.tb_Nomb.TabIndex = 1;
             // 
             // label2
             // 
@@ -287,7 +278,7 @@
             this.tb_Apell.Location = new System.Drawing.Point(19, 42);
             this.tb_Apell.Name = "tb_Apell";
             this.tb_Apell.Size = new System.Drawing.Size(165, 20);
-            this.tb_Apell.TabIndex = 1;
+            this.tb_Apell.TabIndex = 0;
             // 
             // label1
             // 
@@ -313,7 +304,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 430);
             this.Controls.Add(this.btn_Cerrar);
-            this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -321,6 +311,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ModProfesor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Profesor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -332,7 +323,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Cerrar;
-        private System.Windows.Forms.Button btn_limpiar;
         private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -57,7 +57,6 @@
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_ID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +103,7 @@
             this.cbx_Turno.Location = new System.Drawing.Point(244, 261);
             this.cbx_Turno.Name = "cbx_Turno";
             this.cbx_Turno.Size = new System.Drawing.Size(108, 21);
-            this.cbx_Turno.TabIndex = 26;
+            this.cbx_Turno.TabIndex = 11;
             // 
             // cbx_Div
             // 
@@ -119,7 +118,7 @@
             this.cbx_Div.Location = new System.Drawing.Point(131, 261);
             this.cbx_Div.Name = "cbx_Div";
             this.cbx_Div.Size = new System.Drawing.Size(108, 21);
-            this.cbx_Div.TabIndex = 25;
+            this.cbx_Div.TabIndex = 10;
             // 
             // cbx_Anio
             // 
@@ -134,7 +133,7 @@
             this.cbx_Anio.Location = new System.Drawing.Point(19, 261);
             this.cbx_Anio.Name = "cbx_Anio";
             this.cbx_Anio.Size = new System.Drawing.Size(108, 21);
-            this.cbx_Anio.TabIndex = 24;
+            this.cbx_Anio.TabIndex = 9;
             // 
             // label12
             // 
@@ -188,7 +187,7 @@
             this.cbx_Loc.Location = new System.Drawing.Point(190, 173);
             this.cbx_Loc.Name = "cbx_Loc";
             this.cbx_Loc.Size = new System.Drawing.Size(162, 21);
-            this.cbx_Loc.TabIndex = 15;
+            this.cbx_Loc.TabIndex = 6;
             // 
             // cbx_Prov
             // 
@@ -196,7 +195,7 @@
             this.cbx_Prov.Location = new System.Drawing.Point(19, 173);
             this.cbx_Prov.Name = "cbx_Prov";
             this.cbx_Prov.Size = new System.Drawing.Size(162, 21);
-            this.cbx_Prov.TabIndex = 14;
+            this.cbx_Prov.TabIndex = 5;
             this.cbx_Prov.SelectionChangeCommitted += new System.EventHandler(this.cbx_Prov_SelectionChangeCommitted);
             // 
             // tb_Mail
@@ -204,7 +203,7 @@
             this.tb_Mail.Location = new System.Drawing.Point(145, 217);
             this.tb_Mail.Name = "tb_Mail";
             this.tb_Mail.Size = new System.Drawing.Size(208, 20);
-            this.tb_Mail.TabIndex = 13;
+            this.tb_Mail.TabIndex = 8;
             // 
             // label7
             // 
@@ -220,7 +219,7 @@
             this.tb_Tel.Location = new System.Drawing.Point(19, 217);
             this.tb_Tel.Name = "tb_Tel";
             this.tb_Tel.Size = new System.Drawing.Size(111, 20);
-            this.tb_Tel.TabIndex = 11;
+            this.tb_Tel.TabIndex = 7;
             // 
             // label6
             // 
@@ -245,7 +244,7 @@
             this.tb_Dir.Location = new System.Drawing.Point(19, 129);
             this.tb_Dir.Name = "tb_Dir";
             this.tb_Dir.Size = new System.Drawing.Size(334, 20);
-            this.tb_Dir.TabIndex = 8;
+            this.tb_Dir.TabIndex = 4;
             // 
             // label4
             // 
@@ -264,14 +263,14 @@
             this.dtp_fecNac.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtp_fecNac.Name = "dtp_fecNac";
             this.dtp_fecNac.Size = new System.Drawing.Size(165, 20);
-            this.dtp_fecNac.TabIndex = 6;
+            this.dtp_fecNac.TabIndex = 3;
             // 
             // tb_Dni
             // 
             this.tb_Dni.Location = new System.Drawing.Point(19, 85);
             this.tb_Dni.Name = "tb_Dni";
             this.tb_Dni.Size = new System.Drawing.Size(165, 20);
-            this.tb_Dni.TabIndex = 5;
+            this.tb_Dni.TabIndex = 2;
             // 
             // label3
             // 
@@ -287,7 +286,7 @@
             this.tb_Nomb.Location = new System.Drawing.Point(190, 42);
             this.tb_Nomb.Name = "tb_Nomb";
             this.tb_Nomb.Size = new System.Drawing.Size(165, 20);
-            this.tb_Nomb.TabIndex = 3;
+            this.tb_Nomb.TabIndex = 1;
             // 
             // label2
             // 
@@ -303,7 +302,7 @@
             this.tb_Apell.Location = new System.Drawing.Point(19, 42);
             this.tb_Apell.Name = "tb_Apell";
             this.tb_Apell.Size = new System.Drawing.Size(165, 20);
-            this.tb_Apell.TabIndex = 1;
+            this.tb_Apell.TabIndex = 0;
             // 
             // label1
             // 
@@ -319,7 +318,7 @@
             this.btn_Agregar.Location = new System.Drawing.Point(156, 392);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 2;
+            this.btn_Agregar.TabIndex = 12;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
@@ -329,7 +328,7 @@
             this.btn_limpiar.Location = new System.Drawing.Point(48, 392);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
-            this.btn_limpiar.TabIndex = 3;
+            this.btn_limpiar.TabIndex = 13;
             this.btn_limpiar.Text = "Limpiar";
             this.btn_limpiar.UseVisualStyleBackColor = true;
             this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
@@ -339,7 +338,7 @@
             this.btn_Cerrar.Location = new System.Drawing.Point(262, 392);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cerrar.TabIndex = 4;
+            this.btn_Cerrar.TabIndex = 14;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = true;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -353,22 +352,11 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // lbl_ID
-            // 
-            this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Location = new System.Drawing.Point(371, 408);
-            this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(13, 13);
-            this.lbl_ID.TabIndex = 5;
-            this.lbl_ID.Text = "0";
-            this.lbl_ID.Visible = false;
-            // 
             // NuevoAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 430);
-            this.Controls.Add(this.lbl_ID);
             this.Controls.Add(this.btn_Cerrar);
             this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_Agregar);
@@ -378,12 +366,12 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NuevoAlumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Alumno";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -418,6 +406,5 @@
         private System.Windows.Forms.ComboBox cbx_Anio;
         private System.Windows.Forms.ComboBox cbx_Turno;
         private System.Windows.Forms.ComboBox cbx_Div;
-        private System.Windows.Forms.Label lbl_ID;
     }
 }

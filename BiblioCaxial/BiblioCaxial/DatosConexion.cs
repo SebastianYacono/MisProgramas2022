@@ -13,6 +13,7 @@ namespace BiblioCaxial
     {
         protected OleDbConnection conexion;
         public OleDbDataReader reader;
+        public DataTable dt = new DataTable();
         protected string cadenaCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BCaixal.mdb";
 
         public DatosConexion()
@@ -20,7 +21,7 @@ namespace BiblioCaxial
             conexion = new OleDbConnection(cadenaCon);
         }
 
-        public void Select(string sql)
+        public void Select(string sql)//Crea copia de DB a través de SELECT.
         {
             AbrirConexion();
             OleDbCommand comando = new OleDbCommand(sql, conexion);
@@ -36,8 +37,25 @@ namespace BiblioCaxial
             {
                 Console.WriteLine("Error\n\n" + e.Message);
             }
-        }//Crea copia de DB a través de SELECT.
-        public void Delete (string sql)
+        }
+        public void SelectDT(string sql)//Crea copia de DB a través de SELECT.
+        {
+            AbrirConexion();
+            OleDbCommand comando = new OleDbCommand(sql, conexion);
+
+
+            comando.CommandType = CommandType.Text;
+
+            try
+            {
+                dt.Load (comando.ExecuteReader());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error\n\n" + e.Message);
+            }
+        }
+        public void Delete(string sql)//Elimina fila en DB a través de DELETE.
         {
             AbrirConexion();
             OleDbCommand comando = new OleDbCommand(sql, conexion);
@@ -57,8 +75,8 @@ namespace BiblioCaxial
             {
                 CerrarConexion();
             }
-        }//Elimina fila en DB a través de DELETE.
-        public void Insert (string sql)
+        }
+        public void Insert(string sql)//Crea nuevas filas en DB a través de INSERT.
         { 
             AbrirConexion();
             OleDbCommand comando = new OleDbCommand(sql, conexion);
@@ -78,8 +96,8 @@ namespace BiblioCaxial
             {
                 CerrarConexion();
             }
-        }//Crea nuevas filas en DB a través de INSERT.
-        public void Update(string sql)
+        }
+        public void Update(string sql)//Modifica filas en DB a través de UPDATE.
         {
             AbrirConexion();
             OleDbCommand comando = new OleDbCommand(sql, conexion);
@@ -99,10 +117,10 @@ namespace BiblioCaxial
             {
                 CerrarConexion();
             }
-        }//Modifica filas en DB a través de UPDATE.
+        }
 
 
-        public void AbrirConexion()
+        public void AbrirConexion()//Abre conexión.
         {
             try
             {
@@ -115,8 +133,8 @@ namespace BiblioCaxial
             {
                 MessageBox.Show("No se puede abrir la conexión a la base de datos.\n\n" + e);
             }
-        }//Abre conexión.
-        public void CerrarConexion()
+        }
+        public void CerrarConexion()//Cierra conexión.
         {
             try
             {
@@ -129,8 +147,8 @@ namespace BiblioCaxial
             {
                 MessageBox.Show("No se puede cerrar la conexión a la base de datos.\n\n" + e);
             }
-        }//Cierra conexión.
-        public void ProbarConexion()
+        }
+        public void ProbarConexion()//Prueba conexión.
         {
             try
             {
@@ -146,6 +164,6 @@ namespace BiblioCaxial
                 MessageBox.Show("No hay conexión a la Base de Datos.\n\n" + e);
             }
             CerrarConexion();
-        }//Prueba conexión.
+        }
     }
 }
